@@ -1,1 +1,1 @@
-# Faculty.-Frontend-development
+# Faculty. Frontend-development
