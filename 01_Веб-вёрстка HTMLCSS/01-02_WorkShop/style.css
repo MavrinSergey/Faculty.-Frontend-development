@@ -1,0 +1,37 @@
+.header {
+    width: 1000px;
+    margin: 0 auto;
+}
+.header__link {
+    text-decoration: none;
+    color: cornflowerblue;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.header__title {
+    color: #222;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+.text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #7d7987;
+}
+
+.section {
+    width: 1000px;
+    margin: 0 auto;
+}
+.content__title {
+    color: coral;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 80px;
+}

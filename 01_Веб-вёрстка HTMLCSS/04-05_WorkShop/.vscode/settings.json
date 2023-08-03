@@ -1,0 +1,5 @@
+{
+    "diffEditor.wordWrap": "off",
+    "prettier.proseWrap": "never",
+    "editor.wordWrapColumn": 200
+}
