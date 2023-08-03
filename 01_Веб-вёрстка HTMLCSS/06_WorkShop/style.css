@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+}
+
+.header {
+    height: 75px;
+    background: #222;
+}
+
+.container {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+
+.flex {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-centr {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__left-item {
+    margin-right: 41px;
+}
+
+.header__right {
+    position: relative;
+}
+
+.header__right-item {
+    margin-right: 33px;
+}
+
+.header__right-item:last-child,
+.header__right-item:nth-child(3) {
+    margin-right: 0;
+}
+
+.header__checked-cart {
+    position: absolute;
+    top: -9px;
+    left: 154px;
+    background: #f16d7f;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 19px;
+}
+
+.main__right {
+    width: 800px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main__band {
+    margin-left: 63.42px;
+    margin-right: 16px;
+    height: 92px;
+    width: 12px;
+    background: #f16d7f;
+}
+
+.main__title {
+    color: #222;
+    font-family: Lato;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+.main__title > span {
+    font-size: 32px;
+    font-weight: 700;
+}
+.main__title-red {
+    color: #f16d7f;
+}
+.special {
+    padding-top: 65px;
+    margin-bottom: 96px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.special__link {
+    background-size: auto, cover;
+    background-position: center;
+    height: 260px;
+    width: 360px;
+    color: #fff;
+    text-align: center;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.special__link > span {
+    color: #f16d7f;
+    font-size: 24px;
+    font-weight: 700;
+}
+.women {
+    background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)),
+        url(./img/women.png);
+}
+.men {
+    background-image: linear-gradient(
+            rgba(33, 22, 22, 0.7),
+            rgba(33, 22, 22, 0.7)
+        ),
+        url(./img/men.png);
+}
+.kids {
+    background-image: linear-gradient(
+            rgba(33, 22, 22, 0.7),
+            rgba(33, 22, 22, 0.7)
+        ),
+        url(./img/kids.png);
+}
+.accesories {
+    background-image: linear-gradient(
+            rgba(33, 22, 22, 0.7),
+            rgba(33, 22, 22, 0.7)
+        ),
+        url(./img/accesori.png);
+    height: 180px;
+    width: 1140px;
+}
+.featured__header {
+    color: #222;
+    font-family: Lato;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 6px;
+    text-align: center;
+}
+.featured__sub-header {
+    color: #9f9f9f;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 49px;
+}
+.fetured__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item {
+    width: 31.578947%;
+}
+.item > img {
+    margin-bottom: 25px;
+}
+
+.item-head {
+    color: #000;
+    font-family: Lato;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 12.65px;
+}
+
+.desc {
+    color: #5d5d5d;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    width: 306px;
+    margin-bottom: 18px;
+}
+.price {
+    color: #f16d7f;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 50px;
+}
+.all-product {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    width: 212px;
+    height: 48px;
+    color: #f26376;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: 1px solid #f26376;
+}
