@@ -35,11 +35,13 @@ html {
 }
 
 .header__right {
-    position: relative;
+    margin-right: 10px;
 }
 
 .header__right-item {
-    margin-right: 33px;
+    margin-right: 25px;
+z-index: 1
+;
 }
 
 .header__right-item:last-child,
@@ -48,9 +50,11 @@ html {
 }
 
 .header__checked-cart {
-    position: absolute;
-    top: -9px;
-    left: 154px;
+    z-index: 9;
+    bottom: 42px;
+    
+    left: 138px;
+    position: relative;
     background: #f16d7f;
     height: 19px;
     width: 19px;
@@ -74,6 +78,9 @@ html {
     height: 92px;
     width: 12px;
     background: #f16d7f;
+}
+.main__left>img{
+    width: 800px;
 }
 
 .main__title {
@@ -177,6 +184,7 @@ html {
     width: 31.578947%;
 }
 .item > img {
+    width: 300px;
     margin-bottom: 25px;
 }
 
@@ -225,4 +233,34 @@ html {
     font-weight: 400;
     line-height: normal;
     border: 1px solid #f26376;
+}
+
+@media (max-width: 1025px) {
+    .flex-centr{
+        background-color: #f1e4e6;
+    }
+    .main__left>img{
+        width: 300px;
+    }
+    .special{
+        justify-content: center;
+        align-items: center;
+    }
+    .special__link{
+        width: 300px;
+    }
+    .accesories{
+        width: 94%;
+    }
+    .fetured__items {
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        width: 98%;
+        margin-left: 1%;
+    }
+    .item{
+        width: 300px;
+        background-color: #f8f8f8;
+    }
 }
