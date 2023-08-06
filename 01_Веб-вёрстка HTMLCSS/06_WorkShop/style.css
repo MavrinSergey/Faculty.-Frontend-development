@@ -35,25 +35,21 @@ html {
 }
 
 .header__right {
-    margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .header__right-item {
     margin-right: 25px;
-z-index: 1
-;
 }
 
-.header__right-item:last-child,
-.header__right-item:nth-child(3) {
+.header__right-item:last-child {
     margin-right: 0;
 }
 
 .header__checked-cart {
-    z-index: 9;
-    bottom: 42px;
-    
-    left: 138px;
+    bottom: 11px;
+    left: -36px;
     position: relative;
     background: #f16d7f;
     height: 19px;
@@ -78,9 +74,6 @@ z-index: 1
     height: 92px;
     width: 12px;
     background: #f16d7f;
-}
-.main__left>img{
-    width: 800px;
 }
 
 .main__title {
@@ -155,6 +148,7 @@ z-index: 1
     height: 180px;
     width: 1140px;
 }
+
 .featured__header {
     color: #222;
     font-family: Lato;
@@ -235,32 +229,68 @@ z-index: 1
     border: 1px solid #f26376;
 }
 
-@media (max-width: 1025px) {
-    .flex-centr{
-        background-color: #f1e4e6;
+@media (max-width: 1024px) {
+    .header {
+        height: 74px;
     }
-    .main__left>img{
-        width: 300px;
+    .container {
+        padding-left: calc(50% - 366.4px);
+        padding-right: calc(50% - 366.4px);
     }
-    .special{
+    .header > .container {
+        padding-left: calc(50% - 347.5px);
+        padding-right: calc(50% - 347.5px);
+    }
+    .main__left > img {
+        width: 386px;
+    }
+    .main__right {
+        width: 382px;
+    }
+
+    .main__band {
+        margin-left: 39px;
+    }
+    .main__title {
+        font-size: 44px;
+    }
+    .main__title > span {
+        font-size: 24px;
+    }
+    .special {
+        padding-top: 64.95px;
+        margin-bottom: 109.92px;
+        gap: 19.9px;
         justify-content: center;
-        align-items: center;
     }
-    .special__link{
-        width: 300px;
+    .special__link {
+        height: 167px;
+        width: 231px;
     }
-    .accesories{
-        width: 94%;
+    .accesories {
+        height: 116px;
+        width: 732.8px;
     }
-    .fetured__items {
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-        width: 98%;
-        margin-left: 1%;
+
+    .featured__header {
+        margin-bottom: 3.3px;
     }
-    .item{
-        width: 300px;
-        background-color: #f8f8f8;
+    .featured__sub-header {
+        margin-bottom: 73.74px;
+    }
+    .item {
+        width: 360px;
+    }
+    .item > img {
+        width: 360px;
+        margin-bottom: 25.35px;
+    }
+    .price {
+        margin-bottom: 20px;
+    }
+    .all-product {
+        display: block;
+        margin-top: 32.48px;
+        margin-bottom: 70.52px;
     }
 }
