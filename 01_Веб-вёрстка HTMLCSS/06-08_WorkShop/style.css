@@ -33,10 +33,14 @@ html {
 .header__left-item {
     margin-right: 41px;
 }
+.header__left-item:last-child {
+    margin-right: 0;
+}
 
 .header__right {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .header__right-item {
@@ -47,10 +51,11 @@ html {
     margin-right: 0;
 }
 
-.header__checked-cart {
-    bottom: 11px;
-    left: -36px;
-    position: relative;
+.header__right-item:last-child::after {
+    content: "5";
+    top: -5px;
+    left: 133px;
+    position: absolute;
     background: #f16d7f;
     height: 19px;
     width: 19px;
@@ -234,10 +239,6 @@ html {
         height: 74px;
     }
     .container {
-        padding-left: calc(50% - 366.4px);
-        padding-right: calc(50% - 366.4px);
-    }
-    .header > .container {
         padding-left: calc(50% - 347.5px);
         padding-right: calc(50% - 347.5px);
     }
@@ -292,5 +293,67 @@ html {
         display: block;
         margin-top: 32.48px;
         margin-bottom: 70.52px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding-left: calc(50% - 183.5px);
+        padding-right: calc(50% - 183.5px);
+    }
+
+    .header__right-item {
+        margin-right: 0;
+    }
+    .header__right-item:not(:first-child) {
+        display: none;
+    }
+    .main__left {
+        display: none;
+    }
+    .main__right {
+        height: 363px;
+        background-color: #f1e4e6;
+    }
+    .main__band {
+        margin-left: 56px;
+        margin-right: 15px;
+    }
+    .main__title {
+        font-size: 38px;
+    }
+    .main__title > span {
+        font-size: 20px;
+    }
+    .special {
+        padding: 64px 0 0;
+        margin-bottom: 64px;
+        gap: 32px;
+    }
+    .special__link {
+        height: 247px;
+        width: 343px;
+    }
+    .accesories {
+        height: 111px;
+        line-height: 19.2px;
+    }
+    .special__link > span {
+        line-height: 28.8px;
+    }
+
+    .featured__sub-header {
+        margin-bottom: 64.7px;
+    }
+
+    .item > img {
+        margin-bottom: 25.28px;
+    }
+    .price {
+        margin-bottom: 35px;
+    }
+    .all-product {
+        margin-top: 40.61px;
+        margin-bottom: 85px;
     }
 }
