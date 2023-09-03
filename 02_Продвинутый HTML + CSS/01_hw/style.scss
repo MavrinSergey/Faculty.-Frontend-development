@@ -1,0 +1,32 @@
+@import "./vars";
+@import "./mixins";
+
+.container {
+    width: $widthSite;
+}
+
+// Заголовок
+.header span {
+    color: $colorTextSite;
+}
+
+.nav {
+    display: flex;
+    gap: $gapNav;
+
+    &__link {
+        @extend %font;
+        text-decoration: none;
+    }
+}
+
+.content {
+    @include centr;
+    gap: $gapNav;
+
+    &__item {
+        width: $widthSite / 4;
+        height: 200px;
+        border: $borderStandart;
+    }
+}
