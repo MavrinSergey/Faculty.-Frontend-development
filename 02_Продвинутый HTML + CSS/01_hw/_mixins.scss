@@ -1,0 +1,11 @@
+@mixin centr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+%font {
+    font-family: sans-serif;
+    font-style: normal;
+}

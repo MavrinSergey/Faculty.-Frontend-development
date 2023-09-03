@@ -1,0 +1,14 @@
+@mixin fontStyle($color, $size: 14px, $width: 300) {
+    color: $color;
+    font-family: Lato;
+    font-size: $size;
+    font-style: normal;
+    font-weight: $width;
+    line-height: normal;
+}
+@mixin btnPrevNext {
+    padding: 8px;
+    height: 47px;
+    width: 47px;
+    background-color: rgba(42, 42, 42, 0.15);
+}

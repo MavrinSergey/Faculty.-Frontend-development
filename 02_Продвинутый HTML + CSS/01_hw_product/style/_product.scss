@@ -1,0 +1,125 @@
+@import "./mixins";
+
+.top-head {
+    height: 148px;
+    background: $colorGeneralBg;
+    padding: 0 calc(50% - $widthSite / 2);
+    &__left {
+        &-link {
+            @include fontStyle($colorGeneral, 24px, 400);
+            text-decoration: none;
+        }
+    }
+    &__right {
+        &-link,
+        span {
+            @include fontStyle($colorText);
+            text-decoration: none;
+            &:last-child {
+                @include fontStyle($colorGeneral);
+            }
+        }
+    }
+}
+
+.carousel {
+    padding: 11px 0 42px;
+    background-color: #eaeaea;
+    &-inner {
+        width: 597px;
+        height: 724px;
+    }
+    &-item > img {
+    }
+    &-control-prev {
+        justify-content: start;
+        &-iconMy {
+            @include btnPrevNext;
+        }
+        &-iconMy:hover path {
+            fill: #f16d7f;
+        }
+    }
+    &-control-next {
+        justify-content: end;
+        &-iconMy {
+            @include btnPrevNext;
+        }
+        &-iconMy:hover path {
+            fill: #f16d7f;
+        }
+    }
+}
+
+.product {
+    position: absolute;
+    top: -65px;
+    padding: 64.5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    z-index: 1;
+    width: $widthSite;
+    border: 1px solid #eaeaea;
+
+    &__wrapper {
+        position: relative;
+        margin-bottom: 64px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 601px;
+        padding: 0 calc(50% - $widthSite / 2);
+    }
+    &__subtitle {
+        @include fontStyle($colorGeneral);
+    }
+    &__between-headers {
+        margin: 12.1px 0;
+    }
+    &__title {
+        @include fontStyle($colorText2, 18px);
+        margin-bottom: 48.41px;
+    }
+    &__desc {
+        margin-bottom: 32.27px;
+        width: 528px;
+        @include fontStyle($colorText3);
+        text-align: center;
+    }
+    &__price {
+        margin-bottom: 65.04px;
+        @include fontStyle($colorGeneral2, 24px);
+    }
+    &__strip-before-sorting {
+        margin-bottom: 65.05px;
+    }
+    &__sort {
+        display: flex;
+        gap: 22.98px;
+        margin-bottom: 48.41px;
+
+        &-item {
+            @include fontStyle($colorText4, 14px, 400);
+
+            &_summary {
+                list-style: none;
+            }
+        }
+        &-open {
+            margin-left: 9px;
+        }
+    }
+    &__btn {
+        text-align: start;
+        &-icon {
+            margin-left: 24px;
+            margin-right: 22.99px;
+        }
+    }
+}
+
+.fetured__product {
+    margin-bottom: 128px;
+}

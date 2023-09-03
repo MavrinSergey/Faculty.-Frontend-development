@@ -1,0 +1,94 @@
+.header {
+    height: 75px;
+    background: #222;
+    padding: 0 calc(50% - $widthSite / 2);
+    position: relative;
+
+    svg:hover path {
+        fill: #f16d7f;
+    }
+
+    &__left-item {
+        margin-right: 41px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        &-item {
+            margin-right: 25px;
+
+            &:last-child {
+                margin-right: 0;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    top: -5px;
+                    left: 20px;
+                    position: absolute;
+                    background: #f16d7f;
+                    height: 19px;
+                    width: 19px;
+                    border-radius: 50%;
+                    color: #fff;
+                    font-size: 12px;
+                    text-align: center;
+                    line-height: 19px;
+                }
+            }
+        }
+
+        #burger {
+            position: absolute;
+            left: -999999px;
+            visibility: hidden;
+
+            &:checked ~ .menu {
+                display: block;
+            }
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            width: 232px;
+            background-color: #fff;
+            top: 75px;
+            right: 0;
+            z-index: 1;
+            padding: 32px 0 12px 33px;
+            color: #6f6e6e;
+            font-family: Lato;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            &__title {
+                margin-bottom: 24px;
+                color: #000;
+                font-weight: 700;
+            }
+
+            &__sub-title {
+                color: #f16d7f;
+                margin-bottom: 12px;
+            }
+
+            &__item {
+                margin-bottom: 11px;
+                margin-left: 21.5px;
+
+                &:last-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
