@@ -24,7 +24,7 @@
 
 .carousel {
     padding: 11px 0 42px;
-    background-color: #eaeaea;
+    background-color: #f7f7f7;
     &-inner {
         width: 597px;
         height: 724px;
@@ -68,7 +68,6 @@
         margin-bottom: 64px;
         display: flex;
         justify-content: center;
-        width: 100%;
         height: 601px;
         padding: 0 calc(50% - $widthSite / 2);
     }

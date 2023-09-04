@@ -3,8 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Catalog</title>
+        <title>Document</title>
         <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://kit.fontawesome.com/3d1bda7f7c.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <header class="header flex">
@@ -105,59 +109,41 @@
             </div>
         </header>
 
-        <section class="top-head flex">
-            <div class="top-head__left">
-                <a class="top-head__left-link" href="#">NEW ARRIVALS</a>
+        <main class="main flex-centr">
+            <div class="main__left">
+                <img src="./img/main.png" alt="picture" />
             </div>
-            <div class="top-head__right">
-                <a class="top-head__right-link" href="#">HOME</a
-                ><span> / </span>
-                <a class="top-head__right-link" href="#">MEN</a><span> / </span>
-                <a class="top-head__right-link" href="#">NEW ARRIVALS</a>
+            <div class="main__right">
+                <div class="main__band"></div>
+                <h1 class="main__title">
+                    THE BRAND
+                    <br />
+                    <span>OF LUXERIOUS</span>
+                    <span class="main__title-red">FASHION</span>
+                </h1>
+            </div>
+        </main>
+
+        <section class="special">
+            <div class="special__link women">
+                30% OFF<br /><span>FOR WOMEN</span>
+            </div>
+            <div class="special__link men">
+                HOT DEAL<br /><span>FOR MEN</span>
+            </div>
+            <div class="special__link kids">
+                NEW ARRIVALS<br /><span>FOR KIDS</span>
+            </div>
+            <div class="special__link accesories">
+                LUXIROUS & TRENDY<br /><span>ACCESORIES</span>
             </div>
         </section>
 
-        <section class="filter-sort">
-            <details class="filter">
-                <summary class="filter__summary">
-                    <span class="filter__heading">FILTER</span
-                    ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="10"
-                        viewBox="0 0 15 10"
-                        fill="none"
-                    >
-                        <path
-                            d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"
-                            fill="black"
-                        />
-                    </svg>
-                </summary>
-                <div class="filter__content">
-                    <details class="filter__item">
-                        <summary class="filter__head">CATEGORY</summary>
-                        <div class="filter__link-box">
-                            <a class="filter__link">Accessories</a>
-                            <a class="filter__link">Bags</a>
-                            <a class="filter__link">Denim</a>
-                            <a class="filter__link"> Hoodies & Sweatshirts </a>
-                            <a class="filter__link">Jackets & Coats</a>
-                            <a class="filter__link">Polos</a>
-                            <a class="filter__link">Shirts</a>
-                            <a class="filter__link">Shoes</a>
-                            <a class="filter__link">Sweaters & Knits</a>
-                            <a class="filter__link">T-Shirts</a>
-                            <a class="filter__link">Tanks</a>
-                        </div>
-                    </details>
-                </div>
-            </details>
-
-            <div class="sort"></div>
-        </section>
-
-        <section class="fetured fetured__product">
+        <section class="fetured">
+            <h2 class="fetured__header">Fetured Items</h2>
+            <h3 class="fetured__sub-header">
+                Shop for items based on what we featured in this week
+            </h3>
             <div class="fetured__items">
                 <div class="fetured__item">
                     <img src="./img/01.jpg" alt="" />
@@ -189,7 +175,38 @@
                     </div>
                     <div class="fetured__item-price">$52.00</div>
                 </div>
+                <div class="fetured__item">
+                    <img src="./img/04.png" alt="" />
+                    <div class="fetured__item-head">ELLERY X M'O CAPSULE</div>
+                    <div class="fetured__item-desc">
+                        Known for her sculptural takes on traditional tailoring,
+                        Australian arbiter of cool Kym Ellery teams up with Moda
+                        Operandi.
+                    </div>
+                    <div class="fetured__item-price">$52.00</div>
+                </div>
+                <div class="fetured__item">
+                    <img src="./img/05.png" alt="" />
+                    <div class="fetured__item-head">ELLERY X M'O CAPSULE</div>
+                    <div class="fetured__item-desc">
+                        Known for her sculptural takes on traditional tailoring,
+                        Australian arbiter of cool Kym Ellery teams up with Moda
+                        Operandi.
+                    </div>
+                    <div class="fetured__item-price">$52.00</div>
+                </div>
+                <div class="fetured__item">
+                    <img src="./img/06.png" alt="" />
+                    <div class="fetured__item-head">ELLERY X M'O CAPSULE</div>
+                    <div class="fetured__item-desc">
+                        Known for her sculptural takes on traditional tailoring,
+                        Australian arbiter of cool Kym Ellery teams up with Moda
+                        Operandi.
+                    </div>
+                    <div class="fetured__item-price">$52.00</div>
+                </div>
             </div>
+            <button class="fetured__btn">Browse All Product</button>
         </section>
 
         <section class="properties">
@@ -248,7 +265,11 @@
                     </div>
                     <form class="subscribe__form">
                         <input type="email" placeholder="Enter Your Email" />
-                        <input class="btn" type="submit" value="Subscribe" />
+                        <input
+                            class="btn subscribe__btn"
+                            type="submit"
+                            value="Subscribe"
+                        />
                     </form>
                 </div>
             </div>

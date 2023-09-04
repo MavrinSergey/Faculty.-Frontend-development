@@ -1,24 +1,31 @@
 @import "./var";
 
 .filter-sort {
-    padding-top: 39px;
-    padding: 0 calc(50% - $widthSite / 2);
-    position: relative;
     height: 132px;
+    padding: 39px calc(50% - $widthSite / 2) 0;
+    position: relative;
     display: flex;
-    // align-items: center;
-    gap: 320px;
+    gap: 30px;
 }
 
 .filter {
-    position: absolute;
-    padding: 13px 16px 16px;
+    padding-top: 13px;
     width: 360px;
+    position: relative;
+    z-index: 1;
 
+    &__content {
+        background-color: #fff;
+        padding: 0 16px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
     &__summary {
         display: flex;
         align-items: center;
         gap: 11px;
+        padding-left: 16px;
         margin-bottom: 16px;
         list-style: none;
         @include fontStyle($colorText5, 14px, 600);
@@ -42,8 +49,7 @@
     &[open] path {
         fill: $colorGeneral;
     }
-    &__content {
-    }
+
     &-item {
         margin-top: 16px;
     }
@@ -68,5 +74,51 @@
     }
     &__link {
         @include fontStyle($colorText, 14px, 400);
+        &:hover {
+            color: $colorGeneral;
+            cursor: pointer;
+        }
     }
+}
+
+.sort {
+    display: flex;
+    padding-top: 12px;
+    gap: 27.98px;
+
+    &__details {
+        position: relative;
+    }
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__heading {
+        @include fontStyle($colorText4, 14px, 400);
+    }
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        left: -9px;
+        top: 22px;
+        background: #fff;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        padding: 7px 30px 11px 9px;
+    }
+    &__check {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        @include fontStyle($colorText4, 14px, 400);
+        line-height: 17px;
+    }
+}
+
+.fetured__catalog {
+    margin-bottom: 188px;
 }
