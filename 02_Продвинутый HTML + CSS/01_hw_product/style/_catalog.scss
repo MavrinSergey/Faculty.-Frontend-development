@@ -1,0 +1,72 @@
+@import "./var";
+
+.filter-sort {
+    padding-top: 39px;
+    padding: 0 calc(50% - $widthSite / 2);
+    position: relative;
+    height: 132px;
+    display: flex;
+    // align-items: center;
+    gap: 320px;
+}
+
+.filter {
+    position: absolute;
+    padding: 13px 16px 16px;
+    width: 360px;
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin-bottom: 16px;
+        list-style: none;
+        @include fontStyle($colorText5, 14px, 600);
+    }
+
+    &__heading {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: $colorText;
+    }
+
+    &[open] {
+        background-color: #fff;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+    &[open] .filter__heading {
+        color: $colorGeneral;
+    }
+    &[open] path {
+        fill: $colorGeneral;
+    }
+    &__content {
+    }
+    &-item {
+        margin-top: 16px;
+    }
+    &-item[open] .filter__head {
+        color: $colorGeneral;
+    }
+    &__head {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $colorText;
+        padding: 8px 11px 11px 11px;
+        border-bottom: 1px solid $colorText;
+        border-left: 5px solid $colorGeneral;
+    }
+    &__link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding: 24px 16px;
+    }
+    &__link {
+        @include fontStyle($colorText, 14px, 400);
+    }
+}

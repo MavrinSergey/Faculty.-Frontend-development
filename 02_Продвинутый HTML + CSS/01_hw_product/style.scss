@@ -2,6 +2,7 @@
 @import "./style/header";
 @import "./style/mainPage";
 @import "./style/product";
+@import "./style/catalog";
 @import "./style/footer";
 
 * {
@@ -19,8 +20,8 @@ h6 {
     margin: 0;
 }
 
-html {
-    font-size: 10px;
+summary {
+    display: block;
 }
 
 .flex {
