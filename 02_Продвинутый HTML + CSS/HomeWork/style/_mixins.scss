@@ -1,6 +1,6 @@
 @mixin fontStyle($color, $size: 14px, $width: 300) {
     color: $color;
-    font-family: Lato;
+    font-family: "latoregular";
     font-size: $size;
     font-style: normal;
     font-weight: $width;

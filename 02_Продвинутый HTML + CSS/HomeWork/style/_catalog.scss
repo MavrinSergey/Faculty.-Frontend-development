@@ -3,7 +3,6 @@
 .filter-sort {
     height: 132px;
     padding: 39px calc(50% - $widthSite / 2) 0;
-    position: relative;
     display: flex;
     gap: 30px;
 }
@@ -63,7 +62,7 @@
         line-height: 17px;
         color: $colorText;
         padding: 8px 11px 11px 11px;
-        border-bottom: 1px solid $colorText;
+        border-bottom: 1px solid #ebebeb;
         border-left: 5px solid $colorGeneral;
     }
     &__link-box {

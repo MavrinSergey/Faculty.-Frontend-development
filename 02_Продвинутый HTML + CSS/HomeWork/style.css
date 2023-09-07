@@ -74,6 +74,7 @@
 .header__right .menu__item {
   margin-bottom: 11px;
   margin-left: 21.5px;
+  list-style-type: none;
 }
 .header__right .menu__item:last-child {
   margin-bottom: 20px;
@@ -321,27 +322,29 @@
 }
 .top-head__left-link {
   color: #f16d7f;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
 }
-.top-head__right-link,
-.top-head__right span {
+.top-head__right-link {
   color: #636363;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   text-decoration: none;
 }
-.top-head__right-link:last-child,
-.top-head__right span:last-child {
+.top-head__right-link:not(:last-child)::after {
+  padding: 0 6px;
+  content: "/";
+}
+.top-head__right-link:last-child {
   color: #f16d7f;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -403,7 +406,7 @@
 }
 .product__subtitle {
   color: #f16d7f;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -414,7 +417,7 @@
 }
 .product__title {
   color: #4d4d4d;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
@@ -425,7 +428,7 @@
   margin-bottom: 32.27px;
   width: 528px;
   color: #5e5e5e;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -435,7 +438,7 @@
 .product__price {
   margin-bottom: 65.04px;
   color: #ef5b70;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -451,7 +454,7 @@
 }
 .product__sort-item {
   color: #6f6e6e;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -470,6 +473,13 @@
   margin-left: 24px;
   margin-right: 22.99px;
 }
+.product__btn:hover {
+  background-color: #f16d7f;
+  color: #fff;
+}
+.product__btn:hover path {
+  fill: #fff;
+}
 
 .fetured__product {
   margin-bottom: 128px;
@@ -478,7 +488,6 @@
 .filter-sort {
   height: 132px;
   padding: 39px calc(50% - 570px) 0;
-  position: relative;
   display: flex;
   gap: 30px;
 }
@@ -504,7 +513,7 @@
   margin-bottom: 16px;
   list-style: none;
   color: #000;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -540,7 +549,7 @@
   line-height: 17px;
   color: #636363;
   padding: 8px 11px 11px 11px;
-  border-bottom: 1px solid #636363;
+  border-bottom: 1px solid #ebebeb;
   border-left: 5px solid #f16d7f;
 }
 .filter__link-box {
@@ -551,7 +560,7 @@
 }
 .filter__link {
   color: #636363;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -577,7 +586,7 @@
 }
 .sort__heading {
   color: #6f6e6e;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -599,7 +608,7 @@
   gap: 9px;
   align-items: center;
   color: #6f6e6e;
-  font-family: Lato;
+  font-family: "latoregular";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -609,6 +618,170 @@
 
 .fetured__catalog {
   margin-bottom: 188px;
+}
+
+.cart {
+  padding: 96px calc(50% - 570px) 128px;
+  display: flex;
+  justify-content: center;
+  gap: 128.51px;
+}
+.cart__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+.cart__cards-item {
+  position: relative;
+  display: flex;
+  box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+}
+.cart__cards-desc {
+  width: 359px;
+  padding: 22px 22px 62px 31px;
+}
+.cart__cards-title {
+  margin-bottom: 42px;
+  width: 211px;
+  color: #222;
+  font-family: "latoregular";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.cart__cards-price, .cart__cards-color, .cart__cards-size, .cart__cards-quantity {
+  margin-bottom: 6px;
+  color: #575757;
+  font-family: "latoregular";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.cart__cards-price span {
+  color: #ef5b70;
+}
+.cart__cards-quantity input {
+  width: 44px;
+  height: 25px;
+  text-align: center;
+}
+.cart__cards-close {
+  position: absolute;
+  top: 28px;
+  right: 22px;
+}
+.cart__cards-btn-block {
+  margin-top: 41px;
+  display: flex;
+  justify-content: space-between;
+}
+.cart__cards-btn {
+  width: 225px;
+  height: 50px;
+  color: #000;
+  font-family: "latoregular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  background-color: #fff;
+  border: 1px solid #a4a4a4;
+}
+.cart__cards-btn:hover {
+  background-color: #f16d7f;
+  color: #fff;
+}
+.cart__form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 57px;
+  padding-top: 17px;
+}
+.cart__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20.5px;
+  width: 360px;
+}
+.cart__form-title {
+  color: #222;
+  font-family: "latoregular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.cart__form-input {
+  height: 45px;
+  padding: 13px 17.24px 16px;
+  border: 1px solid #a4a4a4;
+}
+.cart__form-btn {
+  margin-top: 2px;
+  width: 101.5px;
+  height: 35px;
+  color: #000;
+  font-family: "latoregular";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  background-color: #fff;
+  border: 1px solid #a4a4a4;
+}
+.cart__form-info {
+  padding: 39px 34px 42px 44px;
+  background-color: #f5f3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.cart__form-sub-total {
+  margin-bottom: 12px;
+  color: #4a4a4a;
+  font-family: "latoregular";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.cart__form-sub-total-value {
+  margin-left: 15px;
+}
+.cart__form-grand-total {
+  color: #222;
+  font-family: "latoregular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-bottom: 21px;
+}
+.cart__form-grand-total-value {
+  margin-left: 15px;
+  color: #f16d7f;
+}
+.cart__form-info-btn {
+  width: 273px;
+  height: 50px;
+  color: #fff;
+  font-family: "latoregular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  background-color: #f16d7f;
+  border: none;
+}
+.cart__form-info-btn:hover {
+  background-color: #fff;
+  color: #f16d7f;
+  border: 1px solid #f16d7f;
+}
+.cart__form-line {
+  margin-bottom: 17px;
 }
 
 .subscribe {

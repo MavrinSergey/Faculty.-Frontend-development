@@ -11,10 +11,13 @@
         }
     }
     &__right {
-        &-link,
-        span {
+        &-link {
             @include fontStyle($colorText);
             text-decoration: none;
+            &:not(:last-child)::after {
+                padding: 0 6px;
+                content: "/";
+            }
             &:last-child {
                 @include fontStyle($colorGeneral);
             }
@@ -116,6 +119,13 @@
             margin-left: 24px;
             margin-right: 22.99px;
         }
+    }
+    &__btn:hover {
+        background-color: $colorGeneral;
+        color: #fff;
+    }
+    &__btn:hover path {
+        fill: #fff;
     }
 }
 

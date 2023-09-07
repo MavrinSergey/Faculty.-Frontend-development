@@ -1,0 +1,128 @@
+@import "./mixins";
+
+.cart {
+    padding: 96px calc(50% - $widthSite / 2) 128px;
+    display: flex;
+    justify-content: center;
+    gap: 128.51px;
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 31px;
+        &-item {
+            position: relative;
+            display: flex;
+            box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+        }
+        &-desc {
+            width: 359px;
+            padding: 22px 22px 62px 31px;
+        }
+        &-title {
+            margin-bottom: 42px;
+            width: 211px;
+            @include fontStyle(#222, 24px, 400);
+        }
+        &-price,
+        &-color,
+        &-size,
+        &-quantity {
+            margin-bottom: 6px;
+            @include fontStyle(#575757, 22px, 400);
+        }
+        &-price span {
+            color: $colorGeneral2;
+        }
+        &-quantity input {
+            width: 44px;
+            height: 25px;
+            text-align: center;
+        }
+        &-close {
+            position: absolute;
+            top: 28px;
+            right: 22px;
+        }
+        &-btn-block {
+            margin-top: 41px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &-btn {
+            width: 225px;
+            height: 50px;
+            @include fontStyle(#000);
+            background-color: #fff;
+            border: 1px solid #a4a4a4;
+        }
+        &-btn:hover {
+            background-color: $colorGeneral;
+            color: #fff;
+        }
+    }
+    &__form-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 57px;
+        padding-top: 17px;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20.5px;
+        width: 360px;
+        &-title {
+            @include fontStyle(#222, 16px);
+        }
+        &-input {
+            height: 45px;
+            padding: 13px 17.24px 16px;
+            border: 1px solid #a4a4a4;
+        }
+        &-btn {
+            margin-top: 2px;
+            width: 101.5px;
+            height: 35px;
+            @include fontStyle(#000, 11px);
+            background-color: #fff;
+            border: 1px solid #a4a4a4;
+        }
+        &-info {
+            padding: 39px 34px 42px 44px;
+            background-color: #f5f3f3;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        &-sub-total {
+            margin-bottom: 12px;
+            @include fontStyle(#4a4a4a, 11px, 400);
+            &-value {
+                margin-left: 15px;
+            }
+        }
+        &-grand-total {
+            @include fontStyle(#222, 16px);
+            margin-bottom: 21px;
+            &-value {
+                margin-left: 15px;
+                color: $colorGeneral;
+            }
+        }
+        &-info-btn {
+            width: 273px;
+            height: 50px;
+            @include fontStyle(#fff, 16px);
+            background-color: $colorGeneral;
+            border: none;
+        }
+        &-info-btn:hover {
+            background-color: #fff;
+            color: $colorGeneral;
+            border: 1px solid $colorGeneral;
+        }
+        &-line {
+            margin-bottom: 17px;
+        }
+    }
+}
