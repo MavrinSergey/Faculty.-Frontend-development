@@ -623,8 +623,7 @@
 .cart {
   padding: 96px calc(50% - 570px) 128px;
   display: flex;
-  justify-content: center;
-  gap: 128.51px;
+  justify-content: space-between;
 }
 .cart__cards {
   display: flex;
@@ -784,6 +783,147 @@
   margin-bottom: 17px;
 }
 
+.registration {
+  padding: 64px calc(50% - 570px) 94px;
+  display: flex;
+  justify-content: space-between;
+}
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+}
+.registration-form__title {
+  margin-bottom: 20px;
+  color: #222;
+  font-family: "latoregular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.registration-form__input {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 13px 17.24px 16px;
+  color: #b1b1b1;
+  font-family: "latoregular";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.registration-form__input:last-of-type {
+  margin-bottom: 15px;
+}
+.registration-form__gender {
+  margin: 11px 0 31px;
+  display: flex;
+  align-items: center;
+}
+.registration-form__radio {
+  margin-right: 10px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+.registration-form__radio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #a4a4a4;
+}
+.registration-form__radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #a4a4a4;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+.registration-form__lable-radio {
+  margin-right: 20px;
+  color: #000;
+  font-family: "latoregular";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  cursor: pointer;
+}
+.registration-form__clue {
+  margin-bottom: 39px;
+  color: #b1b1b1;
+  font-family: "latoregular";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.registration-form__btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16.2px 30px 16.2px 29px;
+  background-color: #f16d7f;
+  color: #fff;
+  font-family: "latoregular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 1px solid transparent;
+}
+.registration-form__btn-icon {
+  margin-left: 20px;
+}
+.registration-form__btn:hover {
+  background-color: #fff;
+  color: #f16d7f;
+  border: 1px solid #f16d7f;
+}
+.registration-form__btn:hover path {
+  fill: #f16d7f;
+}
+
+.advertising__text {
+  max-width: 652px;
+  color: #000;
+  font-family: "latoregular";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  list-style-type: none;
+}
+.advertising__text_mb22 {
+  margin-bottom: 22px;
+}
+.advertising__text_mb21 {
+  margin-bottom: 21px;
+}
+.advertising__text_mb16 {
+  margin-bottom: 16px;
+}
+.advertising__icon {
+  margin-right: 23.08px;
+}
+
 .subscribe {
   padding: 0 calc(50% - 570px);
   height: 448px;
@@ -898,6 +1038,12 @@
   align-items: center;
 }
 
+@font-face {
+  font-family: "latoregular";
+  src: url("./fonts/lato-regular-webfont.woff2") format("woff2"), url("./fonts/lato-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -1147,4 +1293,6 @@ summary {
   .footer__left {
     margin-bottom: 9px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

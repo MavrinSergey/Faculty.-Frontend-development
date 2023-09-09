@@ -3,8 +3,8 @@
 .cart {
     padding: 96px calc(50% - $widthSite / 2) 128px;
     display: flex;
-    justify-content: center;
-    gap: 128.51px;
+    justify-content: space-between;
+    // gap: 128.51px;
     &__cards {
         display: flex;
         flex-direction: column;

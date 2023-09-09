@@ -1,0 +1,120 @@
+@import "./var";
+
+.registration {
+    padding: 64px calc(50% - $widthSite / 2) 94px;
+    display: flex;
+    justify-content: space-between;
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 360px;
+
+        &__title {
+            margin-bottom: 20px;
+            @include fontStyle(#222, 16px);
+        }
+        &__input {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 13px 17.24px 16px;
+            @include fontStyle(#b1b1b1, 13px);
+            &:last-of-type {
+                margin-bottom: 15px;
+            }
+        }
+        &__gender {
+            margin: 11px 0 31px;
+            display: flex;
+            align-items: center;
+        }
+        &__radio {
+            margin-right: 10px;
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+            position: relative;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: none;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 17px;
+                height: 17px;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                border: 2px solid #a4a4a4;
+            }
+            &:checked::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #a4a4a4;
+                transform: translate(-50%, -50%);
+                visibility: visible;
+            }
+        }
+        &__lable-radio {
+            margin-right: 20px;
+            @include fontStyle($colorText5, 11px);
+            cursor: pointer;
+        }
+        &__clue {
+            margin-bottom: 39px;
+            @include fontStyle(#b1b1b1, 13px);
+        }
+        &__btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16.2px 30px 16.2px 29px;
+            background-color: $colorGeneral;
+            @include fontStyle(#fff, 14px, 400);
+            border: 1px solid transparent;
+
+            &-icon {
+                margin-left: 20px;
+            }
+            &:hover {
+                background-color: #fff;
+                color: $colorGeneral;
+                border: 1px solid $colorGeneral;
+            }
+            &:hover path{
+                fill: $colorGeneral;
+            }
+        }
+    }
+}
+
+
+.advertising {
+    &__text {
+        max-width: 652px;
+        @include fontStyle(#000, 24px);
+        list-style-type: none;
+
+        &_mb22 {
+            margin-bottom: 22px;
+        }
+        &_mb21 {
+            margin-bottom: 21px;
+        }
+        &_mb16 {
+            margin-bottom: 16px;
+
+        }
+    }
+    &__icon {
+        margin-right: 23.08px;
+    }
+}

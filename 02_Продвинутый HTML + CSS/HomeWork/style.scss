@@ -4,7 +4,16 @@
 @import "./style/product";
 @import "./style/catalog";
 @import "./style/cart";
+@import "./style/registration";
 @import "./style/footer";
+
+@font-face {
+    font-family: "latoregular";
+    src: url("./fonts/lato-regular-webfont.woff2") format("woff2"),
+    url("./fonts/lato-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     margin: 0;
