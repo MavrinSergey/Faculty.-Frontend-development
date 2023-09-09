@@ -791,6 +791,7 @@
 .registration-form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   max-width: 360px;
 }
 .registration-form__title {
