@@ -1,0 +1,18 @@
+@media (max-width: 1156px) {
+  .header {
+    height: 74px;
+    padding: 0 calc(50% - ($widthSiteTablet - 64px) / 2);
+
+    &__right {
+      &-item {
+        margin-right: 25px;
+        &:nth-child(2) {
+          margin-right: 42px;
+        }
+        &:last-child {
+          margin-right: 9.01px;
+        }
+      }
+    }
+  }
+}

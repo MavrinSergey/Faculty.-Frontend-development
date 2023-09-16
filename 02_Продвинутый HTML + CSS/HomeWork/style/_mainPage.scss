@@ -1,10 +1,9 @@
 .btn {
-    width: 212px;
-    height: 48px;
+    padding: 15px 39px;
     display: block;
     background-color: #fff;
     color: $colorTextBtn;
-    font-family: Lato;
+    font-family: "latoregular", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -92,28 +91,28 @@
 
 .women {
     background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)),
-        url(./img/women.png);
+        url(/img/women.png);
 }
 .men {
     background-image: linear-gradient(
             rgba(33, 22, 22, 0.7),
             rgba(33, 22, 22, 0.7)
         ),
-        url(./img/men.png);
+        url(/img/men.png);
 }
 .kids {
     background-image: linear-gradient(
             rgba(33, 22, 22, 0.7),
             rgba(33, 22, 22, 0.7)
         ),
-        url(./img/kids.png);
+        url(/img/kids.png);
 }
 .accesories {
     background-image: linear-gradient(
             rgba(33, 22, 22, 0.7),
             rgba(33, 22, 22, 0.7)
         ),
-        url(./img/accesori.png);
+        url(/img/accesori.png);
     height: 180px;
     width: 1140px;
 }
@@ -208,14 +207,11 @@
 }
 
 .properties {
-    height: 341px;
     background: #222224;
     padding: 104px calc(50% - $widthSite / 2);
     display: flex;
 
     &__item {
-        height: 134px;
-        width: 360px;
         text-align: center;
 
         &-img {

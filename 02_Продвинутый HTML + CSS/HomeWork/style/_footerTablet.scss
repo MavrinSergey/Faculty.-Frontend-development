@@ -1,0 +1,36 @@
+@media (max-width: 1156px) {
+  .subscribe {
+    padding: 64px 0 219px;
+    height: 100%;
+
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+    &__left {
+      margin-right: 0;
+      padding: 0;
+      margin-bottom: 48px;
+    }
+    &__left p {
+      height: 99px;
+
+    }
+    &__right {
+      padding-top: 0;
+    }
+    &__btn {
+      background-color: #f16d7f;
+      color: #fff;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+
+  .footer {
+    padding-left: calc(50% - ($widthSiteTablet - 64px) / 2);
+    padding-right: calc(50% - ($widthSiteTablet - 64px) / 2);
+  }
+}

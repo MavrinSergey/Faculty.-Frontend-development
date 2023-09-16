@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  counter-reset: count;
+}
+
+@keyframes buld-light-1 {
+  0% {
+    left: -50px;
+    top: 48vh;
+  }
+  50% {
+    left: 58vw;
+    top: 29vh;
+  }
+  100% {
+    left: 100vw;
+    top: 32vh;
+  }
+}
+@keyframes buld-light-2 {
+  0% {
+    left: -50px;
+    top: 85vh;
+  }
+  50% {
+    left: 57vw;
+    top: 60vh;
+  }
+  100% {
+    left: 100vw;
+    top: 8vh;
+  }
+}
+@keyframes buld-light-3 {
+  0% {
+    left: -50px;
+    top: 25vh;
+  }
+  50% {
+    left: 55vw;
+    top: 53vh;
+  }
+  100% {
+    left: 100vw;
+    top: 15vh;
+  }
+}
+@keyframes fill-1 {
+  0% {
+    fill: transparent;
+  }
+  50% {
+    fill: yellowgreen;
+  }
+  100% {
+    fill: yellow;
+  }
+}
+@keyframes fill-2 {
+  0% {
+    fill: transparent;
+  }
+  50% {
+    fill: yellowgreen;
+  }
+  100% {
+    fill: yellow;
+  }
+}
+@keyframes fill-3 {
+  0% {
+    fill: transparent;
+  }
+  50% {
+    fill: yellowgreen;
+  }
+  100% {
+    fill: yellow;
+  }
+}
+.game-box {
+  background-image: url(/06_seminar/europe-kuipers-iss-1920.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+.game-box__lable {
+  position: absolute;
+}
+.game-box__lable_1 {
+  animation: buld-light-1 5s ease-in 1s both;
+}
+.game-box__lable_2 {
+  animation: buld-light-2 5s ease-in 2s both;
+}
+.game-box__lable_3 {
+  animation: buld-light-3 5s ease-in 3s both;
+}
+.game-box__svg {
+  width: 50px;
+  height: 50px;
+}
+.game-box__svg_1 {
+  animation: buld-light-1 5s ease-in 1s both;
+}
+.game-box__svg_2 {
+  animation: buld-light-2 5s ease-in 2s both;
+}
+.game-box__svg_3 {
+  animation: buld-light-3 5s ease-in 3s both;
+}
+.game-box__svg path {
+  fill: yellow;
+  animation: fill-1 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+  animation: fill-2 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  animation: fill-3 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
+}
+.game-box__svg__title {
+  color: aliceblue;
+}
+.game-box__svg__title::before {
+  content: counter(count);
+}
+.game-box__svg__input:checked {
+  counter-increment: count;
+}
+.game-box__svg__input {
+  position: absolute;
+  visibility: hidden;
+  left: -99999999px;
+}/*# sourceMappingURL=style.css.map */

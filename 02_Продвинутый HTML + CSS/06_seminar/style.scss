@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    counter-reset: count;
+}
+@for $i from 1 through 3 {
+    @keyframes buld-light-#{$i} {
+        0% {
+            left: -50px;
+            top: random(90) + vh;
+        }
+
+        50% {
+            left: random(60) + vw;
+            top: random(90) + vh;
+        }
+
+        100% {
+            left: 100vw;
+            top: random(90) + vh;
+        }
+    }
+}
+@for $i from 1 through 3 {
+    @keyframes fill-#{$i} {
+        0% {
+            fill: transparent;
+        }
+
+        50% {
+            fill: yellowgreen;
+        }
+
+        100% {
+            fill: yellow;
+        }
+    }
+}
+.game-box {
+    background-image: url(/06_seminar/europe-kuipers-iss-1920.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+
+    &__lable {
+        position: absolute;
+        @for $i from 1 through 3 {
+            &_#{$i} {
+                animation: buld-light-#{$i} 5s ease-in #{$i}s both;
+            }
+        }
+    }
+    &__svg {
+        width: 50px;
+        height: 50px;
+        // animation: buld-light 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        @for $i from 1 through 3 {
+            &_#{$i} {
+                animation: buld-light-#{$i} 5s ease-in #{$i}s both;
+            }
+        }
+        & path {
+            fill: yellow;
+            // position: absolute;
+            @for $i from 1 through 3 {
+                animation: fill-#{$i}
+                    4s
+                    cubic-bezier(0.25, 0.46, 0.45, 0.94)
+                    #{$i}s
+                    both;
+            }
+        }
+        &__title {
+            color: aliceblue;
+            &::before {
+                content: counter(count);
+            }
+        }
+
+        &__input:checked {
+            counter-increment: count;
+        }
+        &__input {
+            position: absolute;
+            visibility: hidden;
+            left: -99999999px;
+        }
+    }
+}

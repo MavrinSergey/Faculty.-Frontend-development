@@ -1,0 +1,22 @@
+@media (max-width: 1156px) {
+  .carousel {
+    padding: 29.6px 0 28.6px;
+    &-inner {
+      width: 466px;
+      height: 565px;
+    }
+  }
+  .product {
+    position: static;
+    top: 0;
+    width: $widthSiteTablet;
+
+    &__wrapper {
+      //margin-bottom: 64px;
+      padding: 0 calc(50% - $widthSiteTablet / 2);
+    }
+    &__desc {
+      width: 564px;
+    }
+  }
+}
