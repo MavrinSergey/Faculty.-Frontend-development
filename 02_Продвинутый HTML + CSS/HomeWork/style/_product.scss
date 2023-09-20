@@ -86,7 +86,7 @@
     }
     &__desc {
         margin-bottom: 32.27px;
-        width: 528px;
+        max-width: 528px;
         @include fontStyle($colorText3);
         text-align: center;
     }

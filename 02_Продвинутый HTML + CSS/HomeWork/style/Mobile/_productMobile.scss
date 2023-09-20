@@ -1,0 +1,41 @@
+@media (max-width: 425px) {
+  .carousel {
+    padding: 85px 0;
+    //&-inner {
+    //  width: 466px;
+    //  height: 565px;
+    //}
+  }
+  .product {
+    //position: static;
+    //top: 0;
+    width: $widthSiteMobile;
+
+    &__wrapper {
+      //margin-bottom: 64px;
+      padding: 0 calc(50% - $widthSiteMobile / 2);
+    }
+    &__title {
+      margin-bottom: 31.9px;
+    }
+    &__desc {
+      max-width: 326px;
+      margin-bottom: 31.91px;
+    }
+    &__strip-before-sorting {
+      margin-bottom: 49.36px;
+    }
+    &__sort {
+
+      gap: 24.98px;
+      margin-bottom: 64.55px;
+
+      &-item {
+        font-size: 10px;
+      }
+      &-open {
+        margin-left: 9px;
+      }
+    }
+  }
+}

@@ -1,16 +1,18 @@
 @import "./var";
+@import "./mixins";
 
 .filter-sort {
     height: 132px;
     padding: 39px calc(50% - $widthSite / 2) 0;
     display: flex;
     gap: 30px;
+    position: relative;
 }
 
 .filter {
     padding-top: 13px;
     width: 360px;
-    position: relative;
+
     z-index: 1;
 
     &__content {

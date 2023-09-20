@@ -1,57 +1,31 @@
 @import "./style/var";
+
+@import "./style/style";
+
 @import "./style/header";
-@import "./style/headerTablet";
+@import "./style/Tablet/headerTablet";
+@import "./style/Mobile/headerMobile";
+
 @import "./style/mainPage";
-@import "./style/mainPage768-1024";
-@import "./style/product";
-@import "./style/productTablet";
+@import "./style/Tablet/mainPageTablet";
+@import "./style/Mobile/mainPageMobile";
+
 @import "./style/catalog";
-@import "./style/catalogTablet";
+@import "./style/Tablet/catalogTablet";
+@import "./style/Mobile/catalogMobile";
+
+@import "./style/product";
+@import "./style/Tablet/productTablet";
+@import "./style/Mobile/productMobile";
+
 @import "./style/cart";
-@import "./style/cartTablet";
+@import "./style/Tablet/cartTablet";
+@import "./style/Mobile/cartMobile";
+
 @import "./style/registration";
-@import "./style/registrationTablet";
+@import "./style/Tablet/registrationTablet";
+@import "./style/Mobile/registrationMobile";
+
 @import "./style/footer";
-@import "./style/footerTablet";
-
-@font-face {
-    font-family: "latoregular";
-    src: url("./fonts/lato-regular-webfont.woff2") format("woff2"),
-    url("./fonts/lato-regular-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-}
-a {
-    text-decoration: none;
-}
-
-summary {
-    display: block;
-}
-
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.flex-centr {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@import "./style/Tablet/footerTablet";
+@import "./style/Mobile/footerMobile";

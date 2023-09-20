@@ -1,0 +1,14 @@
+@media (max-width: 1156px) {
+  .header {
+    padding: 0 calc(50% - ($widthSiteMobile - 32px) / 2);
+
+    &__right {
+      &-item {
+        margin-right: 10px;
+        &:nth-child(2), &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

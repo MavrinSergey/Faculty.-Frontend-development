@@ -1,0 +1,19 @@
+@media (max-width: 425px) {
+  .subscribe {
+    padding: 64px 0 110px;
+    height: 100%;
+
+    &__left {
+      margin-right: 0;
+      padding: 0;
+      margin-bottom: 59px;
+    }
+  }
+
+  .footer {
+    padding: 43px calc(50% - ($widthSiteMobile - 64px) / 2) 9px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+}

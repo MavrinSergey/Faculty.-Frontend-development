@@ -1,0 +1,48 @@
+@media (max-width: 425px) {
+  .top-head {
+    &_mb {
+      padding: 24px 0 46px;
+      flex-direction: column;
+      gap: 32px;
+      justify-content: center;
+    }
+  }
+
+  .filter {
+
+    padding-top: 24px;
+    &-sort {
+      padding: 0 calc(50% - ($widthSiteMobile - 16px) / 2);
+      gap: normal;
+      justify-content: space-between;
+
+    }
+
+    &__heading {
+      display: none;
+    }
+    &__svg {
+      height: 25px;
+      width: 37.5px;
+    }
+  }
+
+  .sort {
+    padding-top: 26px;
+    padding-right: 0;
+    gap: 23.98px;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    &__heading {
+      font-size: 12px;
+    }
+    &__summary {
+      gap: 9px;
+    }
+  }
+
+  .fetured__catalog {
+    margin-bottom: 147px;
+  }
+}

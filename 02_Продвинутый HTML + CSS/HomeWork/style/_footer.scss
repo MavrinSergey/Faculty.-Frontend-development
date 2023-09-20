@@ -43,7 +43,7 @@
         flex-direction: column;
         align-items: center;
         padding-top: 150px;
-        width: 557px;
+        max-width: 557px;
         text-align: center;
     }
     &__title {
@@ -60,7 +60,7 @@
         font-weight: 400;
     }
     &__right input {
-        width: 256px;
+        max-width: 256px;
         height: 50px;
         flex-shrink: 0;
         fill: #e1e1e1;
@@ -89,7 +89,7 @@
 }
 
 .footer {
-    height: 79px;
+    min-height: 79px;
     background-color: #222224;
     padding-left: calc(50% - 570px);
     padding-right: calc(50% - 570px);

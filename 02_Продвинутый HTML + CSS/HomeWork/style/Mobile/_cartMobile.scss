@@ -1,0 +1,53 @@
+@media (max-width: 425px) {
+  .cart {
+    padding: 39px calc(50% - ($widthSiteMobile - 18px) / 2) 96px;
+    &__cards {
+      &-img {
+        width: 144px;
+        height: 193px;
+      }
+      &-desc {
+        width: 100%;
+        padding: 13.52px 22px 38px 17px;
+      }
+      &-title {
+        margin-bottom: 25.85px;
+        width: 140px;
+        font-size: 16px;
+      }
+      &-price,
+      &-color,
+      &-size,
+      &-quantity {
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+      &-quantity input {
+        width: 24px;
+        height: 15px;
+      }
+      &-close {
+        top: 17px;
+        right: 12px;
+        width: 9.8px;
+        height: 11px;
+      }
+      &-btn-block {
+        margin: 31px 0 64px;
+        justify-content: center;
+        gap: 48px;
+      }
+      &-btn {
+        width: 225px;
+        height: 50px;
+      }
+    }
+
+    &__form-wrapper {
+      flex-direction: column;
+      gap: 15.51px;
+      padding-top: 0;
+    }
+
+  }
+}

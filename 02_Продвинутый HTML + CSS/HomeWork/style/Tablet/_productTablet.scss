@@ -16,7 +16,7 @@
       padding: 0 calc(50% - $widthSiteTablet / 2);
     }
     &__desc {
-      width: 564px;
+      max-width: 564px;
     }
   }
 }

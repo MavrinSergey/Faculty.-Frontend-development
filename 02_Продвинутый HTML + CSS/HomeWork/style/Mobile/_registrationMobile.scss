@@ -1,0 +1,25 @@
+@media (max-width: 425px) {
+  .registration {
+    padding: 40px calc(50% - ($widthSiteMobile - 16px) / 2) 100px;
+    gap: 40px;
+    flex-direction: column;
+
+    .advertising {
+      &__text {
+        font-size: 16px;
+
+        &_mb22 {
+          margin-bottom: 32px;
+        }
+
+        &_mb21 {
+          margin-bottom: 22px;
+        }
+      }
+
+      &__icon {
+        margin-right: 22px;
+      }
+    }
+  }
+}
