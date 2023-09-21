@@ -7,4 +7,6 @@
 Вывести значение переменной admin в консоль.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+const nameUser = Sergey;
+const admin = nameUser;
+console.log(admin);

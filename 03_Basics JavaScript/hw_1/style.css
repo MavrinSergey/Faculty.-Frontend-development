@@ -1,0 +1,19 @@
+/* body {
+} */
+.converter {
+    margin: 100px auto;
+    padding: 15px 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background-color: lightgray;
+}
+.converter__title {
+    text-align: center;
+}
+/* .converter__input {
+}
+.converter__btn {
+} */

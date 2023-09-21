@@ -13,4 +13,18 @@
 Уточнение: пользователь всегда вводит корректное число.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+const convertBtn = document.getElementById("converterBtn");
+convertBtn.addEventListener("click", getInput);
+
+function getInput() {
+    const deg = document.getElementById("converterInput").value;
+    const far = converterDegToFar(deg);
+    setRes(deg, far);
+}
+
+function converterDegToFar(deg) {
+    return (9 / 5) * deg + 32;
+}
+function setRes(deg, far) {
+    alert(`Температура ${deg}\u{00B0} эквивалентна ${far}\u{00B0}F`);
+}
