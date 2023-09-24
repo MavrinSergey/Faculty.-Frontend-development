@@ -14,14 +14,14 @@
 число 32.
 */
 
-// const dayNumber = Number.parseInt(prompt("Введите день недели: "));
+const dayNumber = Number.parseInt(prompt("Введите день недели: "));
 
-// if (dayNumber > 0 && dayNumber <= 10) {
-//     console.log(`Число ${dayNumber} попадает в 1-ую декаду месяца."`);
-// } else if (dayNumber > 10 && dayNumber <= 20) {
-//     console.log(`Число ${dayNumber} попадает во 2-ую декаду месяца."`);
-// } else if (dayNumber > 20 && dayNumber <= 31) {
-//     console.log(`Число ${dayNumber} попадает во 3-ию декаду месяца."`);
-// } else {
-//     console.log(`Неверное значение"`);
-// }
+if (dayNumber > 0 && dayNumber <= 10) {
+    console.log(`Число ${dayNumber} попадает в 1-ую декаду месяца."`);
+} else if (dayNumber > 10 && dayNumber <= 20) {
+    console.log(`Число ${dayNumber} попадает во 2-ую декаду месяца."`);
+} else if (dayNumber > 20 && dayNumber <= 31) {
+    console.log(`Число ${dayNumber} попадает во 3-ию декаду месяца."`);
+} else {
+    console.log(`Неверное значение"`);
+}
