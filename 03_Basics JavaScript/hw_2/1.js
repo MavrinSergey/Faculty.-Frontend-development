@@ -20,3 +20,11 @@ if (positive > 0 && negative < 0) {
 } else {
     alert("Одно или более значений не корректно");
 }
+
+let age = 20;
+
+function upAge() {
+    return age + 5;
+}
+
+console.log(`dfdf ${upAge()}`);
