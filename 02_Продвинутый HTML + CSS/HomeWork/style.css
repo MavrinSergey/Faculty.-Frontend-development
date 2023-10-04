@@ -86,7 +86,7 @@ summary {
   left: -999999px;
   visibility: hidden;
 }
-.header__right #burger:checked ~ .menu {
+.header__right #burger:checked .menu {
   display: block;
 }
 .header__right .menu {
@@ -1500,6 +1500,4 @@ summary {
     flex-direction: column-reverse;
     gap: 40px;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

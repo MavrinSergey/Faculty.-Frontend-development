@@ -4,7 +4,7 @@
 // диапазоне [0, 9].
 const arr = [];
 for (let i = 0; i < 5; i++) {
-    arr.push(Math.floor(Math.random() * 10));
+    arr.push(Math.floor(Math.random() * 4));
 }
 console.log("Сгенерированный массив:", arr);
 
@@ -33,3 +33,15 @@ const indexes = arr
     .map((obj) => obj.index);
 
 console.log("Массив индексов с числом 3:", indexes);
+// Через reduce
+const indexesReduce = arr.reduce((acc, num, index) => {
+    console.log(acc);
+    if (num === 3) {
+        console.log(acc);
+        acc.push(index);
+        console.log(acc);
+    }
+    console.log(acc);
+    return acc;
+}, []);
+console.log(indexesReduce);
