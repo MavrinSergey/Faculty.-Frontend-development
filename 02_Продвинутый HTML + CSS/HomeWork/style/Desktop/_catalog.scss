@@ -30,6 +30,9 @@
         margin-bottom: 16px;
         list-style: none;
         @include fontStyle($colorText5, 14px, 600);
+        &::-webkit-details-marker {
+            display: none;
+        }
     }
 
     &__heading {
@@ -122,4 +125,32 @@
 
 .fetured__catalog {
     margin-bottom: 188px;
+}
+.wrapper {
+    position: relative;
+    z-index: 100;
+}
+header {
+    position: relative;
+    height: 75px;
+    background-color: black;
+    color: white;
+    /*   z-index: 10; */
+}
+.Children {
+    position: absolute;
+    height: 75px;
+    width: 75px;
+    background-color: green;
+    color: white;
+    z-index: -1;
+}
+section {
+    position: relative;
+    top: 15px;
+    height: 100px;
+    width: 100px;
+    left: 20px;
+    background-color: yellow;
+    z-index: -1;
 }
