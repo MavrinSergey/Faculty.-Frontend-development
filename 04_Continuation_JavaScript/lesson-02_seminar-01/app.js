@@ -94,24 +94,26 @@ const btn = document.querySelector("button");
 btn.textContent = "отправить";
 
 btn.addEventListener("click", () => {
-    btn.textContent = "Текст отправлен"
-})
+    btn.textContent = "Текст отправлен";
+});
 
-content.insertAdjacentHTML("afterbegin", "<button class='qw'>click me</button>");
+content.insertAdjacentHTML(
+    "afterbegin",
+    "<button class='qw'>click me</button>"
+);
 const btn2 = document.querySelector(".qw");
-const newP = document.createElement('p');
+const newP = document.createElement("p");
 newP.textContent = "Новый текстовый элемент";
-
 
 const divContent = document.querySelector(".content");
 const someParagraph = document.createElement("p");
 someParagraph.textContent = "Some text in paragraph";
 
-const button = document.createElement('button');
+const button = document.createElement("button");
 button.textContent = "Send";
 button.onclick = () => {
     button.textContent = "Text sent!";
-}
+};
 
 const anotherButton = document.createElement("button");
 anotherButton.state = "not-clicked";
@@ -126,7 +128,9 @@ anotherButton.onclick = () => {
     anotherButton.state = "not-clicked";
     anotherButton.textContent = "Show text";
     divContent.removeChild(someParagraph);
-}
+};
 
 divContent.append(button);
 divContent.append(anotherButton);
+
+const a = ``;

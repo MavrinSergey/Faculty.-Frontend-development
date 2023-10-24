@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03</title>
+</head>
+<body>
+<div class="item">
+    <div class="elem">
+        <div class="info">
+            <h2 class="subtitle">Lorem, ipsum dolor.</h2>
+        </div>
+    </div>
+
+    <script>
+        const h2 = document.querySelector('.subtitle');
+        function seachParent(classNameElement, elem) {
+            if (elem.className === classNameElement) {
+                return elem;
+            } else {
+                return seachParent(classNameElement, elem.parentElement)
+            }
+        }
+        const parEl = seachParent('item', h2);
+        console.log(parEl)
+    </script>
+</div>
+</body>
+</html>

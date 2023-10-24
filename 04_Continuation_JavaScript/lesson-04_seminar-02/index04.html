@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form action="#">
+    <input type="text">
+    <button class="btn">Отправить</button>
+</form>
+<!--Дано поле ввода и кнопка отправить, необходим реализовать функционал,-->
+<!--если пользователь нажимает на кнопку отправить, а поле ввода пустое,-->
+<!--то под полем ввода и кнопкой должен появиться заголовок h2 с текстом вы не заполнили поле ввода-->
+<!--У поля ввода должна появиться рамка красного цвета-->
+
+<script>
+    const btn = document.querySelector('.btn');
+    const h2 = document.createElement('h2');
+    h2.textContent = "вы не заполнили поле ввода";
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const inputName = document.querySelector('input').value;
+        if (inputName == '') {
+            btn.previousElementSibling
+                .insertAdjacentElement("afterend", h2)
+                .previousElementSibling
+                .classList.add("red");
+        }
+    })
+
+
+    const form = document.querySelector("form");
+    const input = document.querySelector("input");
+    const textEl = document.createElement("p");
+    textEl.textContent = "вы не заполнили поле ввода";
+    form.onsubmit = function getInput(e) {
+        e.preventDefault();
+        const val = document.querySelector("input").value;
+        if (val.trim() === "") {
+            form.append(textEl);
+            input.style.borderColor = "red";
+        } else {
+            if (textEl) {
+                textEl.remove();
+                input.style.borderColor = "black";
+            }
+        }
+    };
+</script>
+</body>
+</html>

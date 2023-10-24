@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="elem">
+    <img src="photo.png" alt="photo">
+    <div class="content">
+        <h2 class="heading">Lorem, ipsum dolor.</h2>
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, ea!</p>
+    </div>
+<!--    Необходимо с помощью querySelector найти параграф с классом text-->
+<!--    Вывести в консоль соседний элемент h2-->
+<!--    Вывести в консоль родительский элемент content-->
+<!--    Вывести в консоль картинку-->
+<!--    Вывести в консоль родительский элемент elem-->
+    <script>
+        const text = document.querySelector(".text");
+        const parEl = text.parentElement;
+        console.log(parEl.childNodes[1]);
+        console.log(parEl);
+        const elem = parEl.parentElement;
+        console.log(elem.childNodes[1]);
+        console.log(elem);
+
+        // const pEl = document.querySelector(".text");
+        // const img = document.querySelector("img");
+        // const elem = document.querySelector(".elem");
+        // console.log(pEl.previousElementSibling);
+        // console.log(pEl.parentElement);
+        // console.log(pEl.parentElement.previousElementSibling);
+        // console.log(pEl.parentElement.parentElement);
+    </script>
+</div>
+</body>
+</html>
