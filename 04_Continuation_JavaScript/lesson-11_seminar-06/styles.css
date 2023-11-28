@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "latoregular";
+    src: url("lato-regular-webfont.woff2") format("woff2"),
+    url("lato-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.item {
+    height: 306px;
+    width: 652px;
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+    display: flex;
+    gap: 0;
+    position: relative;
+}
+
+.item__close {
+    position: absolute;
+    top: 28px;
+    right: 22px;
+}
+.item__desc {
+    padding: 22px 22px 62px 31px;
+}
+.item__title {
+    margin-bottom: 42px;
+    color: #222;
+    font-family: "latoregular", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 195px;
+}
+.item__price, .item__color, .item__size, .item__quantity {
+    margin-bottom: 6px;
+    color: #575757;
+    font-family: "latoregular", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.item__price-red {
+    color: #ef5b78;
+}
