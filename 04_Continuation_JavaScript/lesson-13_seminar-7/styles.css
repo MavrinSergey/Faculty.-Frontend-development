@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #9f9f9f;
+}
+.video-player {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 1280px;
+}
+.btn-menu {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 99px);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    z-index: 1000;
+}
+.progres {
+    position: absolute;
+    left: 65px;
+    bottom: 40px;
+    width: 90%;
+}
+.volume {
+    /*position: absolute;*/
+    /*left: 65px;*/
+    /*bottom: 40px;*/
+    /*width: 90%;*/
+}

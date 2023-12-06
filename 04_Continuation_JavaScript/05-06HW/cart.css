@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "latoregular";
+    src: url("lato-regular-webfont.woff2") format("woff2"),
+    url("lato-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cart {
+    padding: 96px 0;
+    width: 1140px;
+    margin: 0 auto;
+    display: none;
+    gap: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.cart__header {
+    color: #222;
+    font-family: "latoregular";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+    margin-bottom: 34px;
+}
+
+.cart__item {
+    height: 306px;
+    width: 652px;
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+    display: flex;
+    gap: 0;
+    position: relative;
+}
+
+.cart__item__img {
+    height: 306px;
+    width: 262px;
+}
+
+.cart__item__close {
+    position: absolute;
+    top: 28px;
+    right: 22px;
+}
+
+.cart__item__desc {
+    padding: 22px 22px 62px 31px;
+}
+
+.cart__item__title {
+    margin-bottom: 42px;
+    color: #222;
+    font-family: "latoregular", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 195px;
+}
+
+.cart__item__price, .cart__item__color, .cart__item__size, .cart__item__quantity {
+    margin-bottom: 6px;
+    color: #575757;
+    font-family: "latoregular", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.cart__item__price-red {
+    color: #ef5b78;
+}

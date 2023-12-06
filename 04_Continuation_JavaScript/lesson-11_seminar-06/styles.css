@@ -1,7 +1,7 @@
 @font-face {
     font-family: "latoregular";
-    src: url("lato-regular-webfont.woff2") format("woff2"),
-    url("lato-regular-webfont.woff") format("woff");
+    src: url("../05-06HW/lato-regular-webfont.woff2") format("woff2"),
+    url("../05-06HW/lato-regular-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -20,6 +20,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
+
 .item {
     height: 306px;
     width: 652px;
@@ -34,9 +35,11 @@
     top: 28px;
     right: 22px;
 }
+
 .item__desc {
     padding: 22px 22px 62px 31px;
 }
+
 .item__title {
     margin-bottom: 42px;
     color: #222;
@@ -47,6 +50,7 @@
     line-height: normal;
     width: 195px;
 }
+
 .item__price, .item__color, .item__size, .item__quantity {
     margin-bottom: 6px;
     color: #575757;
@@ -56,6 +60,7 @@
     font-weight: 400;
     line-height: normal;
 }
+
 .item__price-red {
     color: #ef5b78;
 }
