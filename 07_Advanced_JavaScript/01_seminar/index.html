@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-<script src="task02.js"></script>
+<div>Element 1</div>
+<div data-active="true">Element 2</div>
+<div>Element 3</div>
+<div data-active="true">Element 4</div>
+<script>
+    const arrayDivEl = Array.from(document.querySelectorAll('div'));
+    const resArr = arrayDivEl.filter(div => div.hasAttribute('data-active'))
+    console.log(resArr)
+
+
+
+</script>
 </body>
 </html>
