@@ -2,13 +2,14 @@
 } */
 .converter {
     margin: 100px auto;
-    padding: 15px 10px;
+    padding: 15px 15px;
     width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     background-color: lightgray;
+    border-radius: 10px;
 }
 .converter__title {
     text-align: center;
