@@ -1,0 +1,191 @@
+.screener {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.form,
+.popUp {
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -250px;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+}
+
+.form-wrapper,
+.regReq {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper.animate-signUp .form-wrapper.sign-in {
+    transform: rotate(7deg);
+    animation: animateRotate 0.7s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.wrapper.animate-signIn .form-wrapper.sign-in {
+    animation: animateSignIn 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignIn {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+.wrapper .form-wrapper.sign-up {
+    transform: rotate(7deg);
+}
+
+.wrapper.animate-signIn .form-wrapper.sign-up {
+    animation: animateRotate 0.7s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes animateRotate {
+    0% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(0);
+        z-index: 1;
+    }
+}
+
+.wrapper.animate-signUp .form-wrapper.sign-up {
+    animation: animateSignUp 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignUp {
+    0% {
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+.sign__title,
+.taskAdd__title {
+    font-size: 30px;
+    color: #555;
+    text-align: center;
+}
+
+.sign__inputBox,
+.taskAdd__inputBox {
+    position: relative;
+    width: 320px;
+    margin: 30px 0;
+    label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #333;
+        padding: 0 5px;
+        pointer-events: none;
+        transition: 0.5s;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        color: #333;
+        padding: 0 10px;
+        background: transparent;
+        border: 1px solid #333;
+        outline: none;
+        border-radius: 5px;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+        top: 0;
+        font-size: 12px;
+        background: #fff;
+    }
+}
+
+.sign__forgot_pass {
+    margin: -15px 0 15px;
+
+    a {
+        color: #333;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.sign__submit,
+.taskAdd__submit {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #2196f3, #e91e63);
+}
+
+.sign__link {
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0;
+
+    p {
+        color: #333;
+
+        a {
+            color: #e91e63;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
