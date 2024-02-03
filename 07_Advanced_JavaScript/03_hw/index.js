@@ -9,7 +9,7 @@ const btnSend = document.querySelector(".btn-send-review");
 const btnShow = document.querySelector(".btn-show-reviews");
 const productValue = document.querySelector("#product");
 const reviewValue = document.querySelector("#review");
-btnSend.addEventListener("click", )
+btnSend.addEventListener("click", addedLocalStoregReviews)
 
 btnShow.addEventListener("click", function () {
     window.location.href = "reviews.html"
