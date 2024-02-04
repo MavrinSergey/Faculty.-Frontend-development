@@ -1,180 +1,145 @@
-// // Задание 1.
-// // 1. Необходимо выводить на страницу текущую ширину
-// // и высоту окна браузера, при изменении значений, вывод
-// // также должен меняться.
-// const sizeDesktopEl = document.querySelector(".size-desktop");
-// printDesktopSize()
-//
-// window.addEventListener("resize", printDesktopSize);
-//
-// function printDesktopSize() {
-//     const width = window.outerWidth;
-//     const height = window.outerHeight;
-//     sizeDesktopEl.innerHTML = `
-//     <p>ширина экрана: ${width}</p>
-//     <p>высота экрана: ${height}</p>
-// `
-// }
-//
-// // 2. При закрытии страницы (вкладки), необходимо выводить
-// // всплывающее окно или диалоговое окно браузера и
-// // спросить, уверен ли пользователь, что хочет покинуть
-// // страницу?
-//
-// window.addEventListener("beforeunload", (event)=>{
-//     event.preventDefault()
-//     confirm("Вы уверены что хотите выйти?")
-// })
-// //     3. Используйте объект history для управления историей
-// // переходов на веб-странице. Создайте кнопки "Назад" и
-// // "Вперед" для перемещения по истории.
-// history.back()
-// history.forward()
-
-// Задание 2
-// Даны html и css:
-//     <style>
-//         .box {
-//         width: 100px;
-//         height: 100px;
-//         background-color: lightblue;
-//         margin: 10px;
-//         display: inline-block;
-//     }
-//     </style>
-//
-// <button id="addButton">Добавить элемент</button>
-// <button id="removeButton">Удалить элемент</button>
-// <button id="cloneButton">Клонировать элемент</button>
-// <div id="container">
-//     <div class="box">1</div>
-//     <div class="box">2</div>
-//     <div class="box">3</div>
-// </div>
-
-// Необходимо создать страницу, в которой будут работать
-// все три кнопки.
-// - При нажатии на кнопку "Добавить элемент" на страницу
-// добавляется новый квадратный элемент (<div>) с размерами
-//     100x100 пикселей. Этот элемент должен иметь класс .box
-//     и содержать текст, указывающий порядковый номер элемента
-//     (1, 2, 3 и так далее).
-//     - При нажатии на кнопку "Удалить элемент" удаляется
-//     последний добавленный элемент, если таковой имеется.
-//     - При нажатии на кнопку "Клонировать элемент" создается
-//     копия последнего добавленного элемента и добавляется на
-//     страницу. Если последнего добавленного элемента нет на
-//     странице, необходимо вывести сообщение в alert, с надписью
-//     о невозможности клонирования, так как клонировать нечего.
-
-
-// const btnAddEl = document.querySelector("#addButton");
-// const btnRemoveEl = document.querySelector("#removeButton");
-// const btnCloneEl = document.querySelector("#cloneButton");
-// const containerEl = document.querySelector("#container");
-//
-// btnAddEl.addEventListener("click", ()=>{
-//     const nextNum = containerEl.children.length + 1;
-//     containerEl.insertAdjacentHTML("beforeend", `<div class="box">${nextNum}</div>`)
-// })
-// btnRemoveEl.addEventListener("click", ()=>{
-//     containerEl.lastElementChild?.remove()
-// })
-//
-// btnCloneEl.addEventListener("click", ()=>{
-//     const newBox = containerEl.lastElementChild?.cloneNode(true);
-//     if (newBox) {
-//         containerEl.insertAdjacentElement("beforeend", newBox)
-//     } else {
-//         alert("Нечего клонировать, сначала создайте квадрат.")
-//     }
-// })
-
-// Задание 3.
-// Необходимо создать страницу со списком статей.
-//     Каждая статья состоит из id, заголовка, текста статьи.
-//     id - будем брать из unix timestamp.
-//     Необходимо подготовить список статей в JSON-формате,
-//     которые будут выводиться на странице при первом ее
-// открытии.
-//     Необходимо реализовать возможность удаления статьи.
-//     Необходимо реализовать возможность добавления статьи.
-//     Необходимо реализовать возможность изменения статьи,
-//     ввод данных можно реализовать через prompt.
-//     Статьи должны сохраняться в локальное хранилище
-// браузера, и должны быть доступны после перезагрузки
-// страницы.
-const localStorageKey = "articles";
-const initialArticles = `[
+const redux = {
+    increasesTheNumberOfParticipants(id) {
+        const item = this.findsActivity(id);
+        if (item.currentParticipants < item.maxParticipants) {
+            item.currentParticipants += 1;
+            console.log("прибавили 1 ")
+        }
+    },
+    reducesTheNumberOfParticipants(id) {
+        const item = this.findsActivity(id);
+        if (item.currentParticipants < item.maxParticipants) {
+            item.currentParticipants -= 1;
+            console.log("убавили 1 ")
+        }
+    },
+    findsActivity(id) {
+        let res
+        this.timeTableOfClasses.forEach(item => {
+            if (item.id == id) {
+                res = item;
+                console.log("нашли элемент по id")
+            }
+        })
+        return res;
+    }
+};
+const localStorageKeyClasses = "TimetableOfClasses";
+const localStorageKeyUser = "User";
+const initialListClasses = `[
     {
-    "id": 1706896947721,
-    "title": "header",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, veniam!"
+        "id": 1,
+        "name": "Йога",
+        "time": "10:00 - 11:00",
+        "maxParticipants": 15,
+        "currentParticipants": 8
     },
     {
-    "id": 1706896948000, 
-    "title": "superHEADER", 
-    "text": "Lorem ipsum r sit ur adipisicing elit. Odit, veniam!"
+        "id": 2,
+        "name": "Пилатес",
+        "time": "11:30 - 12:30",
+        "maxParticipants": 10,
+        "currentParticipants": 5
+    },
+    {
+        "id": 3,
+        "name": "Кроссфит",
+        "time": "13:00 - 14:00",
+        "maxParticipants": 20,
+        "currentParticipants": 15
+    },
+    {
+        "id": 4,
+        "name": "Танцы",
+        "time": "14:30 - 15:30",
+        "maxParticipants": 12,
+        "currentParticipants": 10
+    },
+    {
+        "id": 5,
+        "name": "Бокс",
+        "time": "16:00 - 17:00",
+        "maxParticipants": 8,
+        "currentParticipants": 6
+    },
+    {
+        "id": 6,
+        "name": "Боксдд",
+        "time": "16:00 - 17:00",
+        "maxParticipants": 8,
+        "currentParticipants": 8
     }
 ]`
-if (!localStorage.getItem(localStorageKey)) {
-    localStorage.setItem(localStorageKey, initialArticles)
+const initialUserData = {}
+if (!localStorage.getItem(localStorageKeyClasses)) {
+    localStorage.setItem(localStorageKeyClasses, initialListClasses);
 }
-const articles = JSON.parse(localStorage.getItem(localStorageKey));
-const listArticleEl = document.querySelector(".list-article");
-const btnAddedArticleEl = document.querySelector(".btnAdd");
-
-articles.forEach(item => {
-    addedArticle(item)
+redux.timeTableOfClasses = JSON.parse(localStorage.getItem(localStorageKeyClasses));
+redux.timeTableOfClasses.forEach(item => {
+    initialUserData[item.id] = false;
 })
-btnAddedArticleEl.addEventListener("click", ()=> {
-    const title = prompt("Введите заголовок статьи")
-    const text = prompt("Введите текст статьи")
-    const newArticle = {id: Date.now(), title: title, text: text};
-    addedArticle(newArticle)
-    articles.push(newArticle)
-    saveData(articles)
+console.log(initialUserData)
+if (!localStorage.getItem(localStorageKeyUser)) {
+    localStorage.setItem(localStorageKeyUser, JSON.stringify(initialUserData))
+}
+
+redux.user = JSON.parse(localStorage.getItem(localStorageKeyUser));
+const tableContentEl = document.querySelector(".table__content");
+// следующий цикл не объединил с предыдущим так как они выполняют разные задачи
+redux.timeTableOfClasses.forEach(item => {
+    addsAnActivityInDOM(item, redux.user[item.id])
 })
-listArticleEl.addEventListener('click', ({target})=>{
-    if (target.matches(".btnDell")) {
-        const fatherEl = target.closest(".article");
-        fatherEl.remove() // поднимается вверх пока ненайдет селектор
+console.log("создали данные в localStorage и занесли их в redux")
+console.log(redux.user)
+tableContentEl.addEventListener("click", ({target}) => {
+    const fatherEl = target.closest(".table__row");
+    const id = fatherEl.dataset.id
+    const item = redux.findsActivity(id)
+    console.log(item)
+    if (target.matches(".btn_sign-up") && item.maxParticipants !== item.currentParticipants && redux.user[id] === false) {
+        console.log("нажали кнопку записаться")
+        redux.increasesTheNumberOfParticipants(id);
+        redux.user[id] = true;
+        fatherEl.insertAdjacentHTML("beforebegin", rowComponent(redux.findsActivity(id), !redux.user[id], redux.user[id]))
+        fatherEl.remove()
+        saveData();
 
-        const indexEl = articles.findIndex(item => {
-            return (item.id === +fatherEl.dataset.id);
-        })
-        articles.splice(indexEl, 1);
-        saveData(articles)
-    }
-    else if (target.matches(".btnRef")) {
-        const fatherEl = target.closest(".article");
-        const titleEl = fatherEl.querySelector(".title");
-        const textEl = fatherEl.querySelector(".text");
-        const title = titleEl.textContent;
-        const text = textEl.textContent;
-        const newTitle = prompt("Введите заголовок статьи", title)
-        const newText = prompt("Введите текст статьи", text)
-        titleEl.textContent = newTitle;
-        textEl.textContent = newText;
-
-        const resArticle = articles.find(item => {
-            return (item.id === +fatherEl.dataset.id);
-        })
-        resArticle.title = newTitle;
-        resArticle.text = newText;
-        saveData(articles)
+    } else if (target.matches(".btn_cancel-registration")) {
+        if (redux.user[id] === true) {
+            redux.reducesTheNumberOfParticipants(id);
+            redux.user[id] = false;
+            fatherEl.insertAdjacentHTML("beforebegin", rowComponent(redux.findsActivity(id), !redux.user[id], redux.user[id]))
+            fatherEl.remove()
+            saveData();
+        }
     }
 })
-function addedArticle(item) {
-    listArticleEl.insertAdjacentHTML("beforeend", `
-            <div class="article" data-id="${item.id}">
-                <div class="title">${item.title}</div>
-                <div class="text">${item.text}</div>
-                <button class="btnDell">Удалить статью</button>
-                <button class="btnRef">Изменение статьи</button>
-            </div>
-    `)
+
+function addsAnActivityInDOM(item, check,) {
+    if (item.maxParticipants === item.currentParticipants && check === false) {
+        tableContentEl.insertAdjacentHTML("beforeend", rowComponent(item, false, false))
+    } else {
+        tableContentEl.insertAdjacentHTML("beforeend", rowComponent(item, !check, check))
+    }
 }
-function saveData(array) {
-    localStorage.setItem(localStorageKey, JSON.stringify(array))
+
+function rowComponent(item, checkForBtnSignUp, checkForBtnCancelReg) {
+    return `
+        <tr class="table__row" data-id="${item.id}">
+            <td class="table__cell">${item.name}</td>
+            <td class="table__cell">${item.time}</td>
+            <td class="table__cell">${item.maxParticipants}</td>
+            <td class="table__cell">${item.currentParticipants}</td>
+            <td class="table__cell">
+                <button class="btn btn_sign-up registered-${checkForBtnSignUp}">Записаться</button>
+            </td>
+            <td class="table__cell">
+                <button class="btn btn_cancel-registration registered-${checkForBtnCancelReg}">Отменить запись</button>
+            </td>
+        </tr>`
+}
+
+function saveData() {
+    localStorage.setItem(localStorageKeyClasses, JSON.stringify(redux.timeTableOfClasses))
+    localStorage.setItem(localStorageKeyUser, JSON.stringify(redux.user))
 }

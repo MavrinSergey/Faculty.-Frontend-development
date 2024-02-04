@@ -7,29 +7,86 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>01_Seminar</title>
     <style>
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: lightblue;
-            margin: 10px;
-            display: inline-block;
+        .table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid purple;
+        }
+
+        .table__cell {
+            padding: 10px;
+            border: 3px solid purple;
+            text-align: center;
+        }
+
+        .btn {
+            height: 40px;
+            padding: 0 15px;
+            font-size: 16px;
+            line-height: 16px;
+            color: #fff;
+            font-weight: 500;
+            border-radius: 7px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        .btn_sign-up {
+            background-color: forestgreen;
+        }
+        .btn_cancel-registration {
+            background-color: darkred;
+        }
+        .btn:hover {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        .btn:active {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .registered-false:hover {
+            box-shadow: none;
+        }
+        .registered-false:active {
+            box-shadow: none;
+        }
+        .registered-false {
+            background-color: grey;
+            box-shadow: none;
         }
     </style>
 </head>
 <body>
-<!--<div class="size-desktop">-->
-<!--</div>-->
-<!--<button id="addButton">Добавить элемент</button>-->
-<!--<button id="removeButton">Удалить элемент</button>-->
-<!--<button id="cloneButton">Клонировать элемент</button>-->
-<!--<div id="container">-->
-<!--    <div class="box">1</div>-->
-<!--    <div class="box">2</div>-->
-<!--    <div class="box">3</div>-->
-<!--</div>-->
-<button class="btnAdd">Добавление статьи</button>
+<table class="table">
+    <caption class=table__head">
+        <h1>Запись в Спорт клуб</h1>
+    </caption>
+    <tr class="table__row">
+        <th class="table__cell table__cell_header">
+            <h2>название занятия</h2>
+        </th>
+        <th class="table__cell table__cell_header">
+            <h2>время проведения занятия</h2>
+        </th>
+        <th class="table__cell table__cell_header">
+            <h2>максимальное количество участников</h2>
+        </th>
+        <th class="table__cell table__cell_header">
+            <h2>текущее количество участников</h2>
+        </th>
+        <th class="table__cell table__cell_header">
+            <h2>кнопка "записаться"</h2>
+        </th>
+        <th class="table__cell table__cell_header">
+            <h2>кнопка "отменить запись"</h2>
+        </th>
+    </tr>
+    <tbody class="table__content">
 
-<div class="list-article">            </div>
+    </tbody>
+</table>
 <script src="index.js"></script>
+<script src="Redux.js"></script>
 </body>
 </html>
