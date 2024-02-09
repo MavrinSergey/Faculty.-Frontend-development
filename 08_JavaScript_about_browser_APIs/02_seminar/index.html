@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seminar_02</title>
+    <style>
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #333;
+        }
+
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        nav ul li a.active {
+            background-color: #f00;
+        }
+
+        .popup {
+            overflow-y: scroll;
+            visibility: hidden;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: linear, 3s;
+            opacity: 0;
+        }
+
+        .popup-content {
+            margin-top: 100px;
+            /*text-align: right;*/
+            margin-right: auto;
+            margin-left: auto;
+            width: 400px;
+            padding: 0.5rem;
+            font-size: 32px;
+            color: white;
+            border-radius: 10px;
+            border: 2px solid red;
+            background-color: forestgreen;
+        }
+        .d-none {
+            visibility: visible;
+            opacity: 1;
+            transition: all 3s ease-out;
+        }
+        .btn__buy {
+            margin: 100px auto;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            background-color: forestgreen;
+            font-size: 32px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="menu">
+        <li><a class="menu__link active" href="#">Главная</a></li>
+        <li><a class="menu__link" href="#">О нас</a></li>
+        <li><a class="menu__link" href="#">Услуги</a></li>
+        <li><a class="menu__link" href="#">Контакты</a></li>
+        <li><a class="menu__link open-popUp" href="#">Открыть модальное окно</a></li>
+    </ul>
+</nav>
+<button class="btn__buy">Купить</button>
+<div class="popup">
+    <div class="popup-content">
+        <h2>Модальное окно</h2>
+        <p>Это модальное окно</p>
+        <p class="close-popUp">Это крестик</p>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

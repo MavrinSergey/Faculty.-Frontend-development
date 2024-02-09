@@ -14,14 +14,7 @@ const redux = {
         }
     },
     findsActivity(id) {
-        let res
-        this.timeTableOfClasses.forEach(item => {
-            if (item.id == id) {
-                res = item;
-                console.log("нашли элемент по id")
-            }
-        })
-        return res;
+        return this.timeTableOfClasses.find(item => item.id == id);
     }
 };
 const localStorageKeyClasses = "TimetableOfClasses";
@@ -115,7 +108,7 @@ tableContentEl.addEventListener("click", ({target}) => {
     }
 })
 
-function addsAnActivityInDOM(item, check,) {
+function addsAnActivityInDOM(item, check) {
     if (item.maxParticipants === item.currentParticipants && check === false) {
         tableContentEl.insertAdjacentHTML("beforeend", rowComponent(item, false, false))
     } else {
