@@ -19,7 +19,7 @@ console.log(sum(2, 6)); должно вывести число 8 в консол
 */
 
 function sum(a, b) {
-    return a + b;
+    return +a + +b;
 }
 function diff(a, b) {
     if (a > b) {

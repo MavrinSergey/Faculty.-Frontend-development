@@ -9,11 +9,11 @@
 сообщение "Размер заработной платы за вычетом налогов равен N."
 */
 
-const salaryBeforTax = obtainingSalaryData();
-const salaryAfterTax = deductsTax(salaryBeforTax);
+const salaryGross = obtainingSalaryData();
+const salaryNet = deductsTax(salaryGross);
 
 console.log(
-    `Размер заработной платы за вычетом налогов равен ${salaryAfterTax}`
+    `Размер заработной платы за вычетом налогов равен ${salaryNet}`
 );
 
 function obtainingSalaryData() {
