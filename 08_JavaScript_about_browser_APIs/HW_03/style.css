@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img {
+height: 200px;
+}
+svg {
+    width: 15px;
+    height: 15px;
+}
+p {
+    display: flex;
+}
+#photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}

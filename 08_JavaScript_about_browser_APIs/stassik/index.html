@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница товаров</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<section class="container">
+    <h1 class="title">Наши товары</h1>
+    <button class="feedback__btn feedback_link">Просмотреть все отзывы</button>
+    <ul class="products__list">
+    </ul>
+    <p class="error-message"></p>
+</section>
+<div class="overlay"></div>
+<div class="modal">
+    <h2 class="modal__title">Оставьте отзыв</h2>
+    <div class="form__info">
+        <label for="name" class="form__label">Название продукта</label>
+        <input class="form__input" type="text" name="name" id="name">
+        <label for="text" class="form__label">Отзыв</label>
+        <textarea class="form__input" name="text" id="text" cols="30" rows="10"></textarea>
+    </div>
+    <button class="form__btn feedback__btn">Отправить</button>
+    <div class="modal__error"></div>
+</div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
