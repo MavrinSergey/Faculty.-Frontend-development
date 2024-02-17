@@ -1,10 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02_seminar</title>
+    <style>
+        form {
+            margin: 0 auto;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
-$END$
+<!--1. Вы разрабатываете страницу для отображения информации о товаре. У вас есть объект product, который-->
+<!--содержит информацию о товаре, включая название, цену и URL изображения товара. Вам необходимо отобразить-->
+<!--эту информацию на странице с использованием v-bind.-->
+<!--2. Добавьте кнопку, которая будет изменять цену товара. При нажатии на кнопку должна генерироваться скидка на-->
+<!--товар от 1 до 20% и обновиться цена товара в соответствии с значением скидки-->
+
+<!--Вы разрабатываете простое приложение для отображения списка пользователей. У вас есть массив-->
+<!--объектов users, где каждый объект представляет одного пользователя с его именем и возрастом. Вам необходимо-->
+<!--отобразить каждого пользователя из массива в виде списка на странице.-->
+
+<!--Вы разрабатываете приложение для создания списка покупок. У вас есть массив объектов items, где каждый-->
+<!--объект представляет товар с его названием и количеством. Вам необходимо отобразить список товаров,-->
+<!--предоставить возможность изменять количество каждого товара и отмечать товары, которые уже куплены.-->
+
+<!--Вы разрабатываете приложение для управления списком контактов. У вас есть форма с полями "Имя", "Фамилия" и "Email",-->
+<!--где пользователь может вводить информацию о новом контакте. После добавления контакта он должен отображаться в списке-->
+<!--контактов. Требуется связать форму с данными и отображать список контактов на странице.-->
+<div id="app">
+    <form @submit="addContact">
+        <label>Имя:
+            <input type="text" v-model=newContact.firstName>
+        </label>
+        <label>Фамилия:
+            <input type="text" v-model=newContact.lastName>
+        </label>
+        <label>Email:
+            <input type="email" v-model=newContact.email>
+        </label>
+        <button type="submit">Добавить контакт</button>
+
+    </form>
+    <ul>
+        <li v-for="user in users"><p>{{ user.firstName }}</p> <p>{{ user.lastName }}</p> <p>{{ user.email }}</p></li>
+    </ul>
+    <!--    <div class="product">-->
+    <!--        <h2>{{ product.name }}</h2>-->
+    <!--        <span>{{ product.price }}</span>-->
+    <!--        <img :src="product.imgUrl">-->
+    <!--        <button @click="sell">Применить скидку</button>-->
+    <!--    </div>-->
+    <!--<br>-->
+    <!--    <h2>Список пользователей</h2>-->
+    <!--    <ul>-->
+    <!--        <li v-for="user in users"><p>Возраст {{ user.name }} {{ user.age }} лет</p></li>-->
+    <!--    </ul>-->
+
+    <!--    <br>-->
+    <!--    <h2>Список покупок</h2>-->
+    <!--    <ul>-->
+    <!--        <li v-for="item in items">-->
+    <!--            <input type="text" v-model=item.count><input type="checkbox" v-model=item.checkBuy><span>{{item.name}}</span>-->
+    <!--        </li>-->
+    <!--    </ul>-->
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            newContact: {firstName: '', lastName: '', email: ''},
+            users: []
+            // items: [
+            //     {name: 'Молоко', count: 35, checkBuy: true},
+            //     {name: 'Хлеб', count: 25, checkBuy: false},
+            //     {name: 'Яблоки', count: 23, checkBuy: false},
+            //     {name: 'Мясо', count: 54, checkBuy: false},
+            // ],
+            // product: {
+            //     name: 'Арбуз',
+            //     price: 100,
+            //     imgUrl: 'arbuz.jpg'
+            // },
+            // users: [
+            //     {name: 'Boris', age: 35},
+            //     {name: 'Alex', age: 25},
+            //     {name: 'Elena', age: 23},
+            //     {name: 'Artur', age: 54},
+            // ],
+        },
+        methods: {
+            // sell() {
+            //     this.product.price -= this.product.price * (Math.random() * (0.2 - 0.01) + 0.01)
+            // },
+            addContact(event) {
+                event.preventDefault();
+                this.users.push({
+                    firstName: this.newContact.firstName,
+                    lastName: this.newContact.lastName,
+                    email: this.newContact.email
+                })
+                this.newContact.firstName = '';
+                this.newContact.lastName = '';
+                this.newContact.email = ''
+            }
+        }
+    })
+
+</script>
 </body>
 </html>

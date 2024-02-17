@@ -1,10 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seminar_01</title>
 </head>
+<style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+
+    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+    {
+        opacity: 0;
+    }
+</style>
 <body>
-$END$
+<!--Создать параграф, внутри которого будет отображаться текст “Товаров в корзине 0”-->
+<!--2. Создать кнопку “Купить”, при клике на которую, значение внутри параграфа будет увеличиваться на 1,-->
+<!--при повторном нажатии на эту кнопку, счетчик не становится больше, добавить 4 таких кнопки-->
+<!--3. При нажатии на кнопку купить, необходимо чтобы текст внутри кнопки поменялся на “Товар в Корзине-->
+
+<!--Задание 3 (тайминг 15 минут)-->
+<!--1. Создать две кнопки “Мне исполнилось 14 лет” и “Мне еще нет 14 лет”-->
+<!--2. Если пользователь нажимает на первую кнопку, то должен отобразиться текст. “Можете заказать товар”-->
+<!--3. Если пользователь нажимает на вторую кнопку, отображается текст “Доступ закрыт”-->
+
+<!--Создать кнопку “Показать еще” при клике на которую появляется контент под кнопкой,-->
+<!--при повторном клике, контент необходимо скрыть-->
+
+<!--Создайте кнопку "Генерировать случайное число". При клике на кнопку должно отображаться случайное число-->
+<!--в заданном диапазоне (например, от 1 до 10).-->
+<!--2. При клике на кнопку, если полученное значение меньше 5, необходимо вывести на страницу, “Число меньше 5”-->
+<!--3. Если число от 5 до 9, необходимо вывести “Число от 5 до 9”-->
+<!--4. Если число равно 10, необходимо вывести “Число ранов 10”-->
+
+<div id="app">
+    <button v-on:click="isOlder">Мне исполнилось 14 лет</button>
+    <button v-on:click="isUnder">Мне еще нет 14 лет</button>
+    <h3 v-if="date">Можете заказать товар</h3>
+    <h3 v-else>Доступ закрыт</h3>
+
+    <h1 class="title">{{ message }}</h1>
+    <p>Товаров в корзине {{count}}</p>
+    <button v-for="button in buttons" :key="button.id" @click="buyItem(button)">
+        {{ button.text }}
+    </button>
+
+    <button v-on:click="showText">Показать еще</button>
+    <transition name="fade">
+        <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ipsa molestiae</p>
+    </transition>
+
+    <button v-on:click="getRandom">Генерировать случайное число</button>
+    <h3>{{text}}</h3>
+    <h3>{{randomNum}}</h3>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: '#app',
+        components: {
+
+        },
+        data: {
+            message: 'Hello VUE',
+            count: 0,
+            buttons: [
+                {id: 1, text: 'Купить', inCart: false},
+                {id: 2, text: 'Купить', inCart: false},
+                {id: 3, text: 'Купить', inCart: false},
+                {id: 4, text: 'Купить', inCart: false}
+            ],
+            date: false,
+            show: false,
+            randomNum: 0,
+            text: '',
+        },
+        methods: {
+            buyItem(btn) {
+                if (!btn.inCart) {
+                    this.count += 1;
+                    btn.text = "Товар в корзине"
+                    btn.inCart = true;
+                }
+            },
+            isOlder() {
+                this.date = true;
+            },
+            isUnder() {
+                this.date = false;
+            },
+            showText() {
+                this.show = !this.show;
+            },
+            getRandom() {
+                this.randomNum = Math.floor(Math.random() * (11 - 1) + 1)
+                this.getText()
+            },
+            getText() {
+                if (this.randomNum < 5) {
+                    this.text = "Число меньше 5"
+                } else if (this.randomNum > 4 && this.randomNum < 10) {
+                    this.text = "Число от 5 до 9"
+                } else if (this.randomNum === 10) {
+                    this.text = "Число равно 10"
+                }
+            }
+        },
+    })
+
+</script>
 </body>
 </html>
