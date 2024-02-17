@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seminar_01</title>
+</head>
+<style>
+
+</style>
+<body>
+<!--1. Создать кнопку "Перевернуть".-->
+<!--    При клике на кнопку текст кнопки должен перевернуться и отобразиться в обратном порядке.-->
+<!--2. Есть список элементов. -->
+<!--    Пользователь может добавлять новые элементы списка с текстом “Новый элемент списка” нажав на кнопку "Добавить".-->
+<!--3. *Дополнительное задание: При клике на элемент списка он должен быть удален. (по желанию)-->
+
+<div id="app">
+    <button v-on:click="reverseMessage">{{ message }}</button>
+    <br><br><br><br>
+    <button v-on:click="addLi">Добавить</button>
+    <ul>
+        <li v-for="user in users" v-on:click="delLi"><p>{{ user.title }} №{{ user.count }}</p></li>
+    </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            users: [],
+            countNum: 0
+        },
+        methods: {
+            reverseMessage() {
+                this.message = this.message.split('').reverse().join('')
+            },
+            addLi() {
+                this.countNum += 1;
+                    this.users.push({title: 'Новый элемент списка', count: this.countNum})
+            },
+            delLi(event) {
+                event.currentTarget.remove();
+            }
+        }
+    })
+</script>
+</body>
+</html>
