@@ -34,5 +34,7 @@ const products = [
 const result = products.filter(
     (item) => item.hasOwnProperty("photos") && item.photos.length > 0
 );
-
 console.log(result);
+
+products.sort((a, b) => a.price - b.price);
+console.log(products)

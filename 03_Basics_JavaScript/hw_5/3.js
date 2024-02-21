@@ -26,7 +26,4 @@ const products = [
 products.forEach((element) => {
     element.price *= 0.85;
 });
-// products.map((element) => {
-//     element.price *= 0.85;
-// });
 console.log(products);
