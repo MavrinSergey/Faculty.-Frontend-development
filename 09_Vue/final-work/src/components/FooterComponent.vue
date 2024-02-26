@@ -37,6 +37,7 @@ export default {
 
 
 <style scoped lang="scss">
+@import "@/assets/scss-modules/variables";
 .footer {
   margin: 0 auto 141px;
   max-width: 1200px;
@@ -48,7 +49,7 @@ export default {
 .footer__text {
   margin-bottom: 31px;
   max-width: 370px;
-  //color: $colorTextGrey2;
+  color: $colorTextGrey2;
   font-family: jost, sans-serif;
   font-size: 22px;
   font-style: normal;
@@ -58,7 +59,7 @@ export default {
 }
 .footer__title {
   margin-bottom: 35px;
-  //color: $colorPrimary2;
+  color: $colorPrimary2;
   font-family: dm, sans-serif;
   font-size: 25px;
   font-style: normal;
