@@ -7,87 +7,26 @@
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>01_lecture</title>
+    <title>03_lecture</title>
     <style>
-        .block {
-            width: 350px;
-            height: 200px;
-        }
+
     </style>
 </head>
 <body>
 <div id="app">
-    <input type="text" @keyup.enter="send"/>
-    <button @click="send">Отправить</button>
-    <h2>Link elem</h2>
-    <a v-bind:href="linkHref">my new link</a>
-    <img :src="imgPhoto" alt="photo"/>
+    <new-component :title="article" v-for="article in articles" :key="article.id"></new-component>
 
-    <h2>Конструктор</h2>
-    <input type="text" v-model="blockWidth">
-    <input type="text" v-model="blockColor">
-    <div class="block" :style="change">
-        Lorem ipsum dolor sit amet, consectetur adipisicing.
-    </div>
-
-    <h2>{{modelData}}</h2>
-    <input type="text" v-model="modelData">
-
-    <h2>Калькулятор</h2>
-    <input type="text" v-model.number="firstNum">
-    <input type="text" v-model.number="secondNum">
-    =
-    {{ result }}
-    <div>
-        <button @click="sum">+</button>
-        <button @click="diff">-</button>
-        <button @click="mult">*</button>
-        <button @click="div">/</button>
-    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="comp.js"></script>
 <script>
     new Vue({
         el: "#app",
         data: {
-            blockWidth: 100,
-            blockColor: "green",
-            result: 0,
-            modelData: "Редактируемый заголовок",
-            linkHref: "product.html",
-            imgPhoto: "photo.jpg",
-            styleBlock: {
-                backgroundColor: "green",
-                color: "red",
-            },
+            articles: ['info article', 'info article2', 'info article3']
         },
-        methods: {
-            sum() {
-                this.result = this.firstNum + this.secondNum;
-            },
-            diff() {
-                this.result = this.firstNum - this.secondNum;
-            },
-            mult() {
-                this.result = this.firstNum * this.secondNum;
-            },
-            div() {
-                this.result = this.firstNum / this.secondNum;
-            },
-            send() {
-                console.log("Отправили данные внутри input");
-            },
-        },
-        computed: {
-            change() {
-                return {
-                    backgroundColor: this.blockColor,
-                    width: `${this.blockWidth}px`,
-                    height: `${this.blockWidth}px`,
-                }
-            }
-        }
+
     });
 </script>
 </body>

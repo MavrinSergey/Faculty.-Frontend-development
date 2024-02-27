@@ -1,9 +1,14 @@
-Vue.component('liEl', {
+Vue.component('task3', {
     props: [],
     data() {
         return {
-
-        }
+            filterText: '',
+            items: [
+                { id: 1, name: 'list 1' },
+                { id: 2, name: 'arr 2' },
+                { id: 3, name: 'list 3' }
+            ]
+        };
     },
     methods: {
         delEl() {
@@ -11,10 +16,19 @@ Vue.component('liEl', {
         },
 
     },
+    computed: {
+        filteredList() {
+            return this.items.filter(item => item.name.toLowerCase().includes(this.filterText));
+        }
+    },
 
     template:
-        `<div>
-            <li>Элемент<button @click="delEl">Удалить</button></li>
+        `
+        <div>
+            <input type="text" v-model="filterText" placeholder="отфильтруй меня">
+            <ul>
+                <li v-for="item in filteredList" :key="item.id">{{ item.name }}</li>
+            </ul>
         </div>
         `
 })

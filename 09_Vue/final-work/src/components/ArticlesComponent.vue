@@ -1,6 +1,6 @@
 <template>
   <div class="article">
-    <img class="article__img" src="@/assets/img/article_1.png" alt="article">
+    <img class="article__img" :src="urlImg" alt="article">
     <h3 class="article__title">{{ title }}</h3>
     <div class="article__date-wrap">
       <p class="article__date">{{ date }}</p>

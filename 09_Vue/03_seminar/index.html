@@ -14,19 +14,36 @@
 </head>
 <body>
 <div id="app">
-    <new-component :title="article" v-for="article in articles" :key="article.id"></new-component>
+<!--    <counter></counter>-->
+<!--    <input type="text" v-model="newEl" placeholder="Добавить элемент">-->
+<!--    <button @click="addEl">Добавить</button>-->
+<!--    <ul>-->
+<!--        <li v-for="element in elements">{{ element.name }} <button @click="delEl(element.id)">Удалить</button></li>-->
+<!--    </ul>-->
+<!--    <task3></task3>-->
+    <task4></task4>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="comp.js"></script>
+<script src="count.js"></script>
+<script src="task3.js"></script>
 <script>
     new Vue({
         el: "#app",
         data: {
-            articles: ['info article', 'info article2', 'info article3']
+            newEl: "",
+            elements: [],
         },
-
+        methods: {
+            addEl() {
+                this.elements.push({id: Date.now(), name: this.newEl});
+                this.newEl = '';
+            },
+            delEl(id) {
+                this.elements = this.elements.filter(item => item.id !== id);
+            },
+        },
     });
 </script>
 </body>

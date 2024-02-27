@@ -1,9 +1,11 @@
 <template>
-<h1>GalleryComponent</h1>
   <div>
-    <img src="">
+    <h1>GalleryComponent</h1>
     <div>
-      <img v-for="(image, index) in images">
+      <img :src="currentImage" alt="Большое изображение" />
+      <div>
+        <img v-for="(image, index) in images" :key="index" :src="image" @click="changeImage(index)">
+      </div>
     </div>
   </div>
 </template>
@@ -21,10 +23,20 @@ export default {
       currentIndex: 0
     };
   },
+  computed: {
+    currentImage() {
+      return this.images[this.currentIndex];
+    }
+  },
+  methods: {
+    changeImage(index) {
+      this.currentIndex = index;
+    }
+  }
 }
 </script>
 
 
-<style scoped lang="scss">
+<style scoped lang="css">
 
 </style>

@@ -71,15 +71,14 @@
 //     const lastTwoDigits = Math.abs(count % 100);
 //     if (count >= 5 && count <= 20) {
 //         console.log(`Вы нажали ${count} раз`);
-//     } else if ( count === 1) {
+//     } else if (count === 1) {
 //         console.log(`Вы нажали ${count} раз`);
-//     } else if ( count < 5) {
+//     } else if (count < 5) {
 //         console.log(`Вы нажали ${count} раза`);
-//     }
-//     else {
+//     } else {
 //         console.log(`Вы нажали ${count} раз`);
 //     }
-// })
+// });
 
 // Дан тег <div class="content"></div>
 // Создайте с помощью javascript новый элемент button
