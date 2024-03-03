@@ -1,27 +1,9 @@
-<script>
-import ProjectComponent from '@/components/ProjectComponent.vue';
-import ArticlesComponent from "@/components/ArticlesComponent.vue";
-
-export default {
-  name: "Page1Component",
-  props: ['articles'],
-  components: {
-    ArticlesComponent,
-    ProjectComponent,
-  },
-  data() {
-    return {
-
-    }
-  },
-}
-</script>
 <template>
   <section class="page1">
     <div class="page1__header">
       <h1 class="page1__header-title">Let Your Home Be Unique</h1>
       <p class="page1__text">There are many variations of the passages of lorem Ipsum fromavailable, majority.</p>
-      <button class="btn">Get Started<img src="@/assets/img/arrowBtn.svg"></button>
+      <BtnComp :textBtn="textBtn" :color-btn="colorBtn"/>
     </div>
     <div class="projects__wrap">
       <h2 class="projects__title">Follow Our Projects</h2>
@@ -29,10 +11,7 @@ export default {
         readable
         content of page lookings at its layouts points.</p>
       <ul class="projects">
-        <ProjectComponent/>
-        <ProjectComponent/>
-        <ProjectComponent/>
-        <ProjectComponent/>
+        <ProjectComponent v-for="project in modifiedProjects" :project="project" :key="project.id"/>
       </ul>
     </div>
     <div class="descriptions">
@@ -61,32 +40,54 @@ export default {
       <p class="articles__desc">It is a long established fact that a reader will be distracted by the of readable
         content of a page when lookings at its layouts the points of using.</p>
       <ul class="articles__wrap">
-        <ArticlesComponent v-for="article in articles" :key="article.id" :article="article"/>
+        <ArticlesComponent v-for="article in modifiedArticle" :key="article.id" :article="article"/>
       </ul>
     </div>
   </section>
 </template>
+<script>
+import ProjectComponent from '@/components/UI/ProjectComponent.vue';
+import ArticlesComponent from "@/components/UI/ArticlesComponent.vue";
+import BtnComp from "@/components/UI/BtnComponent.vue";
+
+export default {
+  name: "Page1Component",
+  props: ['articles', 'projects'],
+  components: {
+    BtnComp,
+    ArticlesComponent,
+    ProjectComponent,
+  },
+  data() {
+    return {
+      modifiedArticle: [],
+      modifiedProjects: [],
+      textBtn: 'Get Started',
+      colorBtn: 'black',
+      borderRadius: [' 0 70px 0 0', '70px 0 0 0', '0 0 70px 0', '0 0 0 70px'],
+    }
+  },
+  methods: {
+    getModifiedArticle() {
+      this.modifiedArticle = this.articles.filter((item, index) => index < 3);
+    },
+    getModifiedProjects() {
+      this.modifiedProjects = this.projects.slice(-4, this.projects.length)
+          .map((item, i) => {
+            item.borderRadius = this.borderRadius[i];
+            return item;
+          });
+    }
+  },
+  mounted() {
+    this.getModifiedArticle();
+    this.getModifiedProjects();
+  },
+}
+</script>
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/variables";
-.btn {
-  padding: 26px 48px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 18px;
-  border: none;
-  background-color: $colorPrimary2;
-  color: white;
-  font-family: Jost;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 150%;
-}
-
-.page1 {
-
-}
+@import "@/assets/scss-modules/styles";
 
 .page1__header {
   margin: 0 auto 96px;

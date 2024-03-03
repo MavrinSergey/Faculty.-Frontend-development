@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import ArticlesComponent from '@/components/ArticlesComponent.vue';
+import ArticlesComponent from '@/components/UI/ArticlesComponent.vue';
 
 
 export default {
@@ -123,7 +123,7 @@ export default {
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/variables";
+@import "@/assets/scss-modules/styles";
 .page3 {
   margin: 0 auto 60px;
   display: flex;

@@ -1,32 +1,6 @@
-<script>
-// import ProjectComponent from '@/components/ProjectComponent.vue';
-import ArticlesComponent from "@/components/ArticlesComponent.vue";
-
-export default {
-  name: "Page1Component",
-  props: ['articles'],
-  components: {
-    ArticlesComponent,
-    // ProjectComponent,
-  },
-  data() {
-    return {
-
-    }
-  },
-}
-</script>
 <template>
   <section class="page2">
-    <div class="header">
-      <div class="header__wrap">
-        <h1 class="header__title">Articles & News</h1>
-        <nav class="header__nav">
-          <a class="header__link" href="#">Home </a><span>/</span>
-          <a class="header__link" href="#"> Blog</a>
-        </nav>
-      </div>
-    </div>
+    <HeaderContent :title="title" :links="links"/>
     <div class="latest-post">
       <div class="latest-post__title">Latest Post</div>
       <figure class="post">
@@ -35,7 +9,6 @@ export default {
           <div class="post__title">Low Cost Latest Invented Interior Designing Ideas</div>
           <div class="post__content">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim
             maximus.posuere in.Contrary to popular belief.
-
             Lorem Ipsum is not simply random text. It has roots in a piece of classica.
           </div>
           <div class="post__date-wrap">
@@ -48,51 +21,69 @@ export default {
     <div class="articles">
       <h2 class="articles__title">Articles & News</h2>
       <div class="articles__wrap">
-        <ArticlesComponent v-for="article in articles" :key="article.id" :article="article"/>
+        <ArticlesComponent v-for="article in paginatedData" :key="article.id" :article="article"/>
       </div>
-      <nav class="articles__nav">
-        <button class="btn__pagination">01</button>
-        <button class="btn__pagination">02</button>
-        <button class="btn__pagination">03</button>
-        <button class="btn__pagination">&#62;</button>
-      </nav>
+      <div class="btn-menu">
+        <button class="btn btn_white btn_prev"
+                :disabled="pagination_pageNumber === 0"
+                @click="prevPage">
+          Prev
+        </button>
+        <button class="btn btn_white"
+                :disabled="pagination_pageNumber >= pageCount - 1"
+                @click="nextPage">
+          Next
+        </button>
+      </div>
     </div>
   </section>
 </template>
+<script>
+// import ProjectComponent from '@/components/ProjectComponent.vue';
+import ArticlesComponent from "@/components/UI/ArticlesComponent.vue";
+import HeaderContent from "@/components/UI/HeaderContent.vue";
 
-<style scoped lang="scss">
-@import "@/assets/scss-modules/variables";
-.header {
-  margin-bottom: 200px;
-  padding: 178px calc(50% - 256px) 0;
-  max-height: 356px;
-  background-image: url("@/assets/img/page2_Image1.png");
-
-  &__wrap {
-    padding: 41px 0;
-    background-color: white;
-    border-radius: 37px 37px 0 0;
-  }
-
-  &__title {
-    text-align: center;
-    font-family: dm;
-    font-size: 50px;
-    font-weight: 400;
-    line-height: 125%;
-    color: $colorPrimary2;
-  }
-
-  &__nav {
-    text-align: center;
-    font-family: Jost;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 150%;
-    color: $colorTextGrey2;
+export default {
+  name: "Page1Component",
+  props: ['articles'],
+  components: {
+    HeaderContent,
+    ArticlesComponent,
+  },
+  data() {
+    return {
+      title: 'Articles & News',
+      links: [
+        {title: 'Home', url: '#'},
+        {title: 'Blog', url: '#'},
+      ],
+      pagination_pageNumber: 0,
+      pagination_numberItems: 6,
+      pagination_items_total: this.articles.length,
+    }
+  },
+  methods: {
+    nextPage() {
+      this.pagination_pageNumber++;
+    },
+    prevPage() {
+      this.pagination_pageNumber--;
+    }
+  },
+  computed: {
+    pageCount() {
+      return Math.ceil(this.pagination_items_total / this.pagination_numberItems);
+    },
+    paginatedData() {
+      const start = this.pagination_pageNumber * this.pagination_numberItems,
+          end = start + this.pagination_numberItems;
+      return this.articles.slice(start, end);
+    }
   }
 }
+</script>
 
+<style scoped lang="scss">
 .latest-post {
   margin: 0 auto 150px;
   width: 1200px;
@@ -158,28 +149,16 @@ export default {
     line-height: 125%;
     color: $colorPrimary2;
   }
+
   &__wrap {
+    margin-bottom: 51px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 28px;
     row-gap: 30px;
   }
-  &__nav {
-    padding: 51px calc( 50% - 134px) 0;
-    display: flex;
-    gap: 20px;
-  }
 }
-.btn__pagination {
-  width: 52px;
-  height: 52px;
-  border: 1px solid $colorPrimary;
-  border-radius: 50%;
-  font-family: Jost;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 150%;
-  color: $colorPrimary2;
-}
+
+
 
 </style>

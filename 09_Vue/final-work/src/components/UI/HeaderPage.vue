@@ -1,20 +1,26 @@
 <template>
   <header class="header">
     <a class="logo">
-      <img class="logo__img" src="../assets/img/Logo-1.png" alt="logo">
+      <img class="logo__img" src="../../assets/img/Logo-1.png" alt="logo">
     </a>
     <nav class="header__nav">
-      <a class="header__link" @click="changeContent('Page1Component')">Home</a>
-      <a class="header__link" @click="changeContent('Page2Component')">Project</a>
-      <a class="header__link" @click="changeContent('Page3Component')">Blog</a>
+      <a class="header__link" @click="changeContent('Page1Home')">Home</a>
+      <a class="header__link" @click="changeContent('Page3Project')">Project</a>
+      <a class="header__link" @click="changeContent('Page2Blog')">Blog</a>
     </nav>
   </header>
 </template>
 
 <script>
+
 export default {
   name: "HeaderComponent",
   props: [],
+  data() {
+    return {
+
+    }
+  },
   methods: {
     changeContent (componentType) {
       this.$emit('changeContent', componentType)
@@ -26,7 +32,7 @@ export default {
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/variables";
+@import "@/assets/scss-modules/styles";
 .header {
   margin: 44px auto 57px;
   max-width: 1200px;

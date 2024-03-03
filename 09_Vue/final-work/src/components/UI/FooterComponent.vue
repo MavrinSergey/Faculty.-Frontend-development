@@ -2,12 +2,12 @@
   <footer class="footer">
     <div class="footer__left">
       <a class="logo">
-        <img class="logo__img" src="../assets/img/Logo-1.png" alt="logo">
+        <img class="logo__img" src="../../assets/img/Logo-1.png" alt="logo">
       </a>
       <p class="footer__text">It is a long established fact that a reader will be distracted lookings.</p>
     <div class="footer__social">
-      <img src="@/assets/img/twiter.png">
-      <img src="@/assets/img/in.png">
+      <img src="../../assets/img/twiter.png">
+      <img src="../../assets/img/in.png">
     </div>
     </div>
     <div class="footer__center">
@@ -37,7 +37,7 @@ export default {
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/variables";
+@import "@/assets/scss-modules/styles";
 .footer {
   margin: 0 auto 141px;
   max-width: 1200px;

@@ -1,0 +1,74 @@
+<template>
+  <ul>
+    <li class="project">
+      <div class="project__img-wrap">
+        <img class="project__img" :style="`border-radius: ${border}`"
+             :src="require(`@/assets/img/${project.fileImg}`)">
+      </div>
+      <div class="project__desc-wrap">
+        <div>
+          <h3 class="project__title">{{ project.title }}</h3>
+          <p class="project__desc">{{ project.subTitle }}</p>
+        </div>
+        <img src="../../assets/img/arrow_circle.png">
+      </div>
+    </li>
+  </ul>
+</template>
+
+<script>
+export default {
+  name: "ProjectComponent",
+  props: ['project'],
+  computed: {
+    border() {
+      return this.project.borderRadius;
+    },
+  },
+}
+</script>
+
+
+<style scoped lang="scss">
+@import "@/assets/scss-modules/styles";
+
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__img-wrap {
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__desc-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    color: $colorPrimary2;
+    font-family: dm;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 125%;
+    text-align: left;
+  }
+
+  &__desc {
+    color: $colorTextGrey2;
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+}
+</style>

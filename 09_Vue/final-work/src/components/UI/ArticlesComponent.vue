@@ -1,10 +1,10 @@
 <template>
   <div class="article">
-    <img class="article__img" :src="urlImg" alt="article">
+    <img class="article__img" :src="require(`@/assets/img/${fileImg}`)" alt="article">
     <h3 class="article__title">{{ title }}</h3>
     <div class="article__date-wrap">
       <p class="article__date">{{ date }}</p>
-      <img class="article__arrow" src="@/assets/img/arrow_circle.png" alt="arrow_circle">
+      <img class="article__arrow" src="../../assets/img/arrow_circle.png" alt="arrow_circle">
     </div>
   </div>
 </template>
@@ -14,8 +14,9 @@ export default {
   props: ['article'],
   name: "ArticlesComponent",
   computed: {
-    urlImg() {
-      return this.article.urlImg;
+    fileImg() {
+
+      return this.article.fileImg;
     },
     title() {
       return this.article.title;
@@ -29,7 +30,7 @@ export default {
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/variables";
+@import "@/assets/scss-modules/styles";
 .article {
   padding: 21px;
   height: 521px;
