@@ -79,28 +79,35 @@ export default {
   },
   mounted() {
     this.getFilterProjects();
+    this.getModifiedProjects();
   },
 }
 </script>
 
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "@/assets/scss-modules/styles";
+.page3 {
+  .projects {
+    margin: 0 auto 200px;
+    width: $width;
+    display: block;
 
-.projects {
-  margin: 0 auto 200px;
-  width: $width;
-  //&__wrap {
-  //  margin-bottom: 61px;
-  //  display: flex;
-  //  column-gap: 30px;
-  //}
-  ul {
-    //display: flex;
-    //flex-direction: column;
-    row-gap: 37px;
-    column-count: 2;
-    column-width: 500px;
+    ul {
+      margin-bottom: 61px;
+      row-gap: 37px;
+      column-gap: 30px;
+      column-count: 2;
+      column-width: 500px;
+
+      & .project {
+        margin-bottom: 37px;
+
+        & .project__img {
+          border-radius: 0;
+        }
+      }
+    }
   }
 }
 

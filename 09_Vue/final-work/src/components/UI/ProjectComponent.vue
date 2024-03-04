@@ -2,7 +2,6 @@
     <li class="project">
       <div class="project__img-wrap">
         <img class="project__img"
-             :style="`border-radius: ${project.borderRadius}`"
              :src="require(`@/assets/img/${project.fileImg}`)">
       </div>
       <div class="project__desc-wrap">
