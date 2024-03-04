@@ -6,14 +6,9 @@
                :color-btn="colorBtn"/>
     </div>
     <div class="projects">
-      <div class="projects__wrap">
-        <ul>
-          <ProjectComponent v-for="project in paginatedDataLeft" :project="project" :key="project.id"/>
-        </ul>
-        <ul>
-          <ProjectComponent v-for="project in paginatedDataRight" :project="project" :key="project.id"/>
-        </ul>
-      </div>
+      <ul>
+        <ProjectComponent v-for="project in paginatedData" :project="project" :key="project.id"/>
+      </ul>
       <div class="btn-menu">
         <button class="btn btn_white btn_prev"
                 :disabled="pagination_pageNumber === 0"
@@ -71,22 +66,15 @@ export default {
         this.filterProjects = this.projects.filter(project => project.title.indexOf(searchItem) !== -1)
       }
     },
-    paginatedData() {
-      const start = this.pagination_pageNumber * this.pagination_numberItems,
-          end = start + this.pagination_numberItems;
-      return this.filterProjects.slice(start, end);
-    },
   },
   computed: {
     pageCount() {
       return Math.ceil(this.pagination_items_total / this.pagination_numberItems);
     },
-    paginatedDataLeft() {
-      return this.paginatedData().filter((project, index) => index % 2 === 0)
-    },
-    paginatedDataRight() {
-      return this.paginatedData().filter((project, index) => index % 2 !== 0)
-
+    paginatedData() {
+      const start = this.pagination_pageNumber * this.pagination_numberItems,
+          end = start + this.pagination_numberItems;
+      return this.filterProjects.slice(start, end);
     },
   },
   mounted() {
@@ -102,15 +90,17 @@ export default {
 .projects {
   margin: 0 auto 200px;
   width: $width;
-  &__wrap {
-    margin-bottom: 61px;
-    display: flex;
-    column-gap: 30px;
-  }
+  //&__wrap {
+  //  margin-bottom: 61px;
+  //  display: flex;
+  //  column-gap: 30px;
+  //}
   ul {
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
     row-gap: 37px;
+    column-count: 2;
+    column-width: 500px;
   }
 }
 

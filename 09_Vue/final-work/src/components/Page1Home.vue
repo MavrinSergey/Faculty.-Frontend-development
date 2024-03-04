@@ -144,6 +144,22 @@ export default {
   grid-template-columns: 1fr 1fr;
   column-gap: 105px;
   row-gap: 56px;
+
+  //&:nth-child(1) .project__img {
+  //  border-radius: 0 70px 0 0;
+  //}
+  //
+  //&:nth-child(2) .project__img {
+  //  border-radius: 0 0 70px 0;
+  //}
+  //
+  //&:nth-child(3) .project__img {
+  //  border-radius: 0 0 0 70px;
+  //}
+  //
+  //&:nth-child(4) .project__img {
+  //  border-radius: 70px 0 0 0;
+  //}
 }
 
 .descriptions {

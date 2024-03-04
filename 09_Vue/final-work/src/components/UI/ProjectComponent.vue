@@ -1,8 +1,8 @@
 <template>
-  <ul>
     <li class="project">
       <div class="project__img-wrap">
-        <img class="project__img" :style="`border-radius: ${border}`"
+        <img class="project__img"
+             :style="`border-radius: ${project.borderRadius}`"
              :src="require(`@/assets/img/${project.fileImg}`)">
       </div>
       <div class="project__desc-wrap">
@@ -13,7 +13,6 @@
         <img src="../../assets/img/arrow_circle.png">
       </div>
     </li>
-  </ul>
 </template>
 
 <script>
@@ -21,9 +20,6 @@ export default {
   name: "ProjectComponent",
   props: ['project'],
   computed: {
-    border() {
-      return this.project.borderRadius;
-    },
   },
 }
 </script>
@@ -37,6 +33,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  break-inside: avoid;
 
   &__img-wrap {
     overflow: hidden;
