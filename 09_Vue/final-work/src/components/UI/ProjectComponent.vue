@@ -1,17 +1,20 @@
 <template>
+  <router-link class="header__link" :to="`/projects/${project.id}`">
     <li class="project">
       <div class="project__img-wrap">
         <img class="project__img"
-             :src="require(`@/assets/img/${project.fileImg}`)">
+             :src="require(`@/assets/img/${project.fileImg}`)" alt="project__img">
       </div>
       <div class="project__desc-wrap">
         <div>
           <h3 class="project__title">{{ project.title }}</h3>
           <p class="project__desc">{{ project.subTitle }}</p>
         </div>
-        <img src="../../assets/img/arrow_circle.png">
+        <img src="../../assets/img/arrow_circle.png" alt="arrow">
       </div>
     </li>
+  </router-link>
+
 </template>
 
 <script>
@@ -25,7 +28,7 @@ export default {
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/styles";
+@import "@/assets/scss-modules/styles.scss";
 
 
 .project {

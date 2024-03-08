@@ -1,10 +1,10 @@
 <template>
   <section>
-    <img class="banner" src="@/assets/img/page3_Banner.jpeg" alt="banner">
+    <img class="banner" src="../assets/img/page3_Banner.jpeg" alt="banner">
     <div class="page3">
       <div class="page3__left">
         <h2 class="page3__title">Let’s Get Solution for Building Construction Work</h2>
-        <img class="page3__img" src="@/assets/img/page3_Image.png">
+        <img class="page3__img" src="../assets/img/page3_Image.png">
         <div class="page3__subtitle">
           <div class="page3__date">26 December,2022</div>
           <div class="liks">
@@ -48,7 +48,7 @@
             have suffered.</p>
           </li>
         </ol>
-        <img class="page3__img" src="@/assets/img/page3_Image2.png">
+        <img class="page3__img" src="../assets/img/page3_Image2.png">
         <p class="page3__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere
           in.Contrary
           to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have
@@ -74,7 +74,7 @@ import ArticlesComponent from '@/components/UI/ArticlesComponent.vue';
 
 
 export default {
-  name: "page3Component",
+  name: "Page4BlogDetails",
   props: ['articles'],
   components: {
     ArticlesComponent,
@@ -123,7 +123,7 @@ export default {
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/styles";
+@import "@/assets/scss-modules/styles.scss";
 .page3 {
   margin: 0 auto 60px;
   display: flex;

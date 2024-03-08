@@ -1,11 +1,11 @@
 <template>
-  <button class="btn" @click="chooseRoom" :class="{btn_black: isActiveBlack, btn_white: isActiveWhite}">{{ textBtn }}</button>
+  <button class="btn" @click="chooseRoom" :class="{btn_black: isActiveBlack, btn_white: isActiveWhite}"><slot></slot></button>
 </template>
 
 <script>
 export default {
   name: "BtnComponent",
-  props: ['textBtn', 'colorBtn'],
+  props: ['colorBtn'],
   data() {
     return {
       isActiveBlack: true,
@@ -13,8 +13,7 @@ export default {
     }
   },
   mounted() {
-    this.colorBtn === 'black' ? this.changeClass(true) : this.changeClass(false);
-    console.log(this.colorBtn === 'black' ? this.changeClass(true) : this.changeClass(false))
+    this.colorBtn === 'white' ? this.changeClass(false) : this.changeClass(true);
   },
   methods: {
     changeClass(bool) {
@@ -22,13 +21,13 @@ export default {
       this.isActiveWhite = !bool;
     },
     chooseRoom() {
-      this.$emit('select-room', this.textBtn)
+      this.$emit('select-room')
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/styles";
+@import "@/assets/scss-modules/styles.scss";
 
 </style>

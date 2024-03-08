@@ -30,7 +30,7 @@ export default {
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/styles";
+@import "@/assets/scss-modules/styles.scss";
 .article {
   padding: 21px;
   height: 521px;

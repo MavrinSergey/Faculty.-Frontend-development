@@ -2,34 +2,34 @@
   <section class="page1">
     <div class="page1__header">
       <h1 class="page1__header-title">Let Your Home Be Unique</h1>
-      <p class="page1__text">There are many variations of the passages of lorem Ipsum fromavailable, majority.</p>
-      <BtnComp :textBtn="textBtn" :color-btn="colorBtn"/>
+      <p class="page1__text">There are many variations of the passages of lorem Ipsum available, majority.</p>
+      <BtnComponent :colorBtn="colorBtn">Get Started</BtnComponent>
     </div>
     <div class="projects__wrap">
       <h2 class="projects__title">Follow Our Projects</h2>
       <p class="page1__text projects__desc">It is a long established fact that a reader will be distracted by the of
         readable
-        content of page lookings at its layouts points.</p>
+        content of page looking at its layouts points.</p>
       <ul class="projects">
-        <ProjectComponent v-for="project in modifiedProjects" :project="project" :key="project.id"/>
+        <ProjectComponent v-for="project in lastFourProjects" :project="project" :key="project.id"/>
       </ul>
     </div>
     <div class="descriptions">
       <div class="description">
         <p>12</p>
-        <p>Years Of Experiance</p>
+        <p>Years Of Experience</p>
       </div>
-      <img src="@/assets/img/Line_vertical.png">
+      <img src="../assets/img/Line_vertical.png" alt="line">
       <div class="description">
         <p>85</p>
         <p>Success Project</p>
       </div>
-      <img src="@/assets/img/Line_vertical.png">
+      <img src="../assets/img/Line_vertical.png" alt="line">
       <div class="description">
         <p>15</p>
         <p>Active Project</p>
       </div>
-      <img src="@/assets/img/Line_vertical.png">
+      <img src="../assets/img/Line_vertical.png" alt="line">
       <div class="description">
         <p>95</p>
         <p>Happy Customers</p>
@@ -38,9 +38,9 @@
     <div class="articles">
       <h2 class="articles__title">Articles & News</h2>
       <p class="articles__desc">It is a long established fact that a reader will be distracted by the of readable
-        content of a page when lookings at its layouts the points of using.</p>
+        content of a page when looking at its layouts the points of using.</p>
       <ul class="articles__wrap">
-        <ArticlesComponent v-for="article in modifiedArticle" :key="article.id" :article="article"/>
+        <ArticlesComponent v-for="article in firstThreeArticles" :key="article.id" :article="article"/>
       </ul>
     </div>
   </section>
@@ -48,41 +48,30 @@
 <script>
 import ProjectComponent from '@/components/UI/ProjectComponent.vue';
 import ArticlesComponent from "@/components/UI/ArticlesComponent.vue";
-import BtnComp from "@/components/UI/BtnComponent.vue";
+import {mapGetters} from "vuex";
+import BtnComponent from "@/components/UI/BtnComponent.vue";
+
 
 export default {
-  name: "Page1Component",
-  props: ['articles', 'projects'],
+  name: "Page1Home",
   components: {
-    BtnComp,
+    BtnComponent,
     ArticlesComponent,
     ProjectComponent,
   },
   data() {
     return {
-      modifiedArticle: [],
-      modifiedProjects: [],
-      textBtn: 'Get Started',
       colorBtn: 'black',
     }
   },
-  methods: {
-    getModifiedArticle() {
-      this.modifiedArticle = this.articles.filter((item, index) => index < 3);
-    },
-    getModifiedProjects() {
-      this.modifiedProjects = this.projects.slice(-4, this.projects.length)
-    }
-  },
-  mounted() {
-    this.getModifiedArticle();
-    this.getModifiedProjects();
+  computed: {
+    ...mapGetters(['firstThreeArticles', 'lastFourProjects'])
   },
 }
 </script>
 
-<style lang="scss">
-@import "@/assets/scss-modules/styles";
+<style scoped lang="scss">
+@import "@/assets/scss-modules/styles.scss";
 
 .page1 {
   &__header {

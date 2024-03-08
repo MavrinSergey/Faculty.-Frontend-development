@@ -10,14 +10,14 @@ export default {
     <div class="header__wrap">
       <h1 class="header__title">{{ title }}</h1>
       <nav class="header__nav">
-        <a class="header__link" href="#" v-for="link in links" :key="link.id">{{ link.title }} </a>
+        <router-link class="header__link" v-for="link in links" :key="link.id" :to="link.url">{{ link.title }}</router-link>
       </nav>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/styles";
+@import "@/assets/scss-modules/styles.scss";
 
 .header {
   margin-bottom: 200px;

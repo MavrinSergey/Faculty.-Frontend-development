@@ -1,22 +1,16 @@
 <template>
   <footer class="footer">
     <div class="footer__left">
-      <a class="logo">
-        <img class="logo__img" src="../../assets/img/Logo-1.png" alt="logo">
-      </a>
+      <LogoComponent/>
       <p class="footer__text">It is a long established fact that a reader will be distracted lookings.</p>
-    <div class="footer__social">
-      <img src="../../assets/img/twiter.png">
-      <img src="../../assets/img/in.png">
-    </div>
+      <div class="footer__social">
+        <img src="../assets/img/twiter.png" alt="twiter">
+        <img src="../assets/img/in.png" alt="in">
+      </div>
     </div>
     <div class="footer__center">
       <div class="footer__title">Pages</div>
-      <nav class="header__nav">
-        <a class="footer__text header__link">Home</a>
-        <a class="footer__text header__link">Project</a>
-        <a class="footer__text header__link">Blog</a>
-      </nav>
+      <NavPages/>
     </div>
     <div class="footer_right">
       <div class="footer__title">Contact</div>
@@ -29,23 +23,27 @@
 
 <script>
 
+import LogoComponent from "@/components/UI/LogoComponent.vue";
+import NavPages from "@/components/UI/NavPages.vue"
+
 export default {
   name: "FooterComponent",
+  components: {LogoComponent, NavPages},
 
 }
 </script>
 
 
 <style scoped lang="scss">
-@import "@/assets/scss-modules/styles";
+@import "@/assets/scss-modules/styles.scss";
+
 .footer {
   margin: 0 auto 141px;
   max-width: 1200px;
   display: flex;
   gap: 101px;
-
-
 }
+
 .footer__text {
   margin-bottom: 31px;
   max-width: 370px;
@@ -57,6 +55,7 @@ export default {
   line-height: normal;
   white-space: pre-line;
 }
+
 .footer__title {
   margin-bottom: 35px;
   color: $colorPrimary2;
@@ -66,15 +65,18 @@ export default {
   font-weight: 400;
   line-height: 125%;
 }
+
 .logo__img {
   margin-bottom: 18px;
   width: 177px;
   height: 50px;
 }
+
 .footer__social {
   display: flex;
   gap: 70px;
 }
+
 .header__nav {
   display: flex;
   flex-direction: column;
