@@ -1,8 +1,14 @@
 <template>
-  <button class="btn" @click="handleClick" :class="{btn_black: isActiveBlack, btn_white: isActiveWhite}"><slot></slot></button>
+  <button
+      class="btn"
+      @click="handleClick"
+      :class="{btn_black: isActiveBlack, btn_white: isActiveWhite}">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
+
 export default {
   name: "BtnComponent",
   props: ['colorBtn', 'handler'],
@@ -20,8 +26,8 @@ export default {
       this.isActiveBlack = bool;
       this.isActiveWhite = !bool;
     },
-    handleClick() {
-      return this.handler();
+    handleClick({target}) {
+      return this.handler(target.textContent);
     }
   }
 }
