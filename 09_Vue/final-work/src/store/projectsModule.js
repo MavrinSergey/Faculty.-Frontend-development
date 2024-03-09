@@ -74,16 +74,43 @@ export const projectsModule = {
                     title: "Modern Living Area",
                     subTitle: "Decor / Artchitecture",
                 },
-            ]
+            ],
+            currentPage: 0,
+            projectsPerPage: 8,
         }
     },
-    getters: {
-        getProjects: state => {
-            return state.projects;
+    mutations: {
+        setCurrentPage(state, pagination_pageNumber) {
+            state.currentPage = pagination_pageNumber;
         },
+    },
+    getters: {
         lastFourProjects: state => {
             return state.projects.slice(-4, state.projects.length)
         },
+        getPaginatedData: state => {
+            const start = state.currentPage * state.projectsPerPage;
+            const end = start + state.projectsPerPage;
+            return state.projects.slice(start, end);
+        },
+        getPagination_items_total: (state) => {
+            return state.projects.length;
+        },
+        getPageCount(state, getters) {
+            return Math.ceil(getters.getPagination_items_total / state.projectsPerPage);
+        }
+    },
+    actions: {
+        nextPage({state, commit, getters}) {
+            return state.currentPage === getters.getPageCount - 1
+                ? null
+                : commit('setCurrentPage', state.currentPage + 1);
+        },
+        prevPage({state, commit}) {
+            return state.currentPage === 0
+                ? null
+                : commit('setCurrentPage', state.currentPage - 1)
+        }
     },
     namespaced: true
 }
