@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "dashboard"
+  name: "DashboardComponent"
 }
 </script>
 

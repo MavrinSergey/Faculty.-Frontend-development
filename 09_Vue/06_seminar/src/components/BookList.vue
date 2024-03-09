@@ -1,28 +1,27 @@
 <template>
-<ul>
-  <UserComponent :user="user" v-for="user in users" :key="user.id"/>
-</ul>
+  <ul>
+    <BookComponent :book="book" v-for="book in books" :key="book.id"/>
+  </ul>
 </template>
 
 <script>
-import UserComponent from './UserComponent.vue'
+import BookComponent from './BookComponent.vue'
+
 export default {
   name: 'HelloWorld',
   components: {
-    UserComponent
+    BookComponent
   },
-  props: {
-  },
+  props: {},
   data() {
     return {
-      users: [
-        {name: 'Boris', lastName: 'Ivanov', email: 'asd@qwe.ru'},
-        {name: 'Sergey', lastName: 'Smirnov', email: 'asd@qwe.ru'},
-        {name: 'Andrey', lastName: 'Sobolev', email: 'asd@qwe.ru'},
-        {name: 'Viktor', lastName: 'Trio', email: 'asd@qwe.ru'}
+      books: [
+        {id: 1, title: 'Книга 1', author: 'Автор 1', year: 2020, details: 'gdfgdfgdfgdfg'},
+        {id: 2, title: 'Книга 2', author: 'Автор 2', year: 2019, details: 'hgfhfhhgfh'},
+        {id: 3, title: 'Книга 3', author: 'Автор 3', year: 2021, details: ''}
       ]
-    }
-  }
+    };
+  },
 }
 </script>
 
@@ -31,14 +30,17 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }

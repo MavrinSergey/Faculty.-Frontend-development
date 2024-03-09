@@ -11,6 +11,7 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
+  name: 'SeminarComp',
   computed: {
     ...mapState(['count'])
   },

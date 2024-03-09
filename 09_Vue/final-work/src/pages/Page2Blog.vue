@@ -5,13 +5,15 @@
     <div class="articles">
       <h2 class="articles__title">{{ title }}</h2>
       <div class="articles__wrap">
-        <ArticlesComponent v-for="article in articlesItem" :key="article.id" :article="article"/>
+        <ArticlesComponent v-for="article in paginatedData" :key="article.id" :article="article"/>
       </div>
       <div class="btn-menu">
-        <BtnComponent :colorBtn="colorBtn" :disabled="pagination_pageNumber === 0"
-                      @click="prevPage">Prev</BtnComponent>
-        <BtnComponent :colorBtn="colorBtn" :disabled="pagination_pageNumber >= pageCount - 1"
-                      @click="nextPage">Next</BtnComponent>
+        <BtnComponent :colorBtn="colorBtn" :handler="prevPage">
+          Prev
+        </BtnComponent>
+        <BtnComponent :colorBtn="colorBtn" :handler="nextPage">
+          Next
+        </BtnComponent>
       </div>
     </div>
   </section>
@@ -19,7 +21,7 @@
 <script>
 import HeaderContent from "@/components/HeaderContent.vue";
 import LatestPost from "@/components/UI/LatestPost.vue";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import ArticlesComponent from "@/components/UI/ArticlesComponent.vue";
 import BtnComponent from "@/components/UI/BtnComponent.vue";
 
@@ -40,35 +42,36 @@ export default {
         {title: 'Project', url: '/project'},
       ],
       colorBtn: 'white',
-      pagination_pageNumber: 0,
-      pagination_numberItems: 6,
-      // pagination_items_total: this.articles.length,
     }
   },
   methods: {
-    // nextPage() {
-    //   this.pagination_pageNumber++;
-    // },
-    // prevPage() {
-    //   this.pagination_pageNumber--;
-    // }
+    ...mapActions({
+      prevPage: 'articles/prevPage',
+      nextPage: 'articles/nextPage',
+    }),
+
+    mounted() {
+      this.paginatedData();
+    },
+    prevPageThis() {
+      console.log('next')
+    }
   },
   computed: {
-    ...mapGetters(['articlesItem']),
-    // pageCount() {
-    //   return Math.ceil(this.pagination_items_total / this.pagination_numberItems);
-    // },
-    // paginatedData() {
-    //   const start = this.pagination_pageNumber * this.pagination_numberItems,
-    //       end = start + this.pagination_numberItems;
-    //   return this.articles.slice(start, end);
-    // }
+    ...mapGetters({
+      articlesItem: 'articles/getArticles',
+      paginatedData: 'articles/getPaginatedData',
+      pagination_items_total: 'articles/getPagination_items_total',
+      pagination_numberItems: 'articles/getPagination_numberItems',
+      pagination_pageNumber: 'articles/getPagination_pageNumber',
+    }),
   }
 }
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/scss-modules/styles.scss";
+
 .articles {
   margin: 0 auto 200px;
   width: 1200px;

@@ -1,25 +1,25 @@
 <template>
-  <li>
-    <div class="book" @click="toggleDetails(book)">
-      <h3>{{ book.title }}</h3>
-      <p>Автор: {{ book.author }}</p>
-      <p>Год издания: {{ book.year }}</p>
-      <div v-if="book.showDetails">
-        <p>{{ book.details }}</p>
-        <!-- Дополнительные детали о книге -->
-        <p v-if="availability">Нет дополнителных деталей о книге</p>
-      </div>
-    </div>
+  <li @click="toggleDetails(movie)">
+    <h3>Выбранный фильм</h3>
+    <p>Название: {{ movie.title }}</p>
+    <p>Режиссер: {{ movie.director }}</p>
+    <p>Год выпуска: {{ movie.year }}</p>
+<!--    <div v-if="movie.showDetails">-->
+<!--      <p>{{ movie.details }}</p>-->
+<!--      &lt;!&ndash; Дополнительные детали о книге &ndash;&gt;-->
+<!--      <p v-if="availability">Нет дополнителных деталей о книге</p>-->
+<!--    </div>-->
   </li>
 </template>
 
 <script>
+
 import Vue from "vue";
 
 export default {
-  name: "UserComponent",
+  name: "MovieInfo",
   props: {
-    book: {
+    movie: {
       type: Object,
       required: true
     }
@@ -30,11 +30,12 @@ export default {
     }
   },
   methods: {
-    toggleDetails(book) {
-      Vue.set(book, 'showDetails', !book.showDetails);
-      if (!book.details) {
+    toggleDetails(movie) {
+      Vue.set(movie, 'showDetails', !movie.showDetails);
+      if (!movie.details) {
         this.availability = !this.availability
       }
+      this.$emit('info-updated', movie.details);
     }
   }
 }

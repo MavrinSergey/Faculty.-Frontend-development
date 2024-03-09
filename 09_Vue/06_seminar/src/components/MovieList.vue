@@ -1,47 +1,41 @@
 <template>
-  <ul>
-    <BookComponent :book="book" v-for="book in books" :key="book.id"/>
-  </ul>
+  <div>
+    <h2>Список фильмов</h2>
+    <ul>
+      <MovieInfo :movie="movie" v-for="movie in movies" :key="movie.id" @info-updated="handleInfoUpdate"/>
+    <div>{{ newDetails }}</div>
+    </ul>
+  </div>
 </template>
 
 <script>
-import BookComponent from './BookComponent.vue'
+import MovieInfo from './MovieInfo.vue'
 
 export default {
-  name: 'HelloWorld',
+  name: 'MovieList',
   components: {
-    BookComponent
+    MovieInfo
   },
   props: {},
   data() {
     return {
-      books: [
-        {id: 1, title: 'Книга 1', author: 'Автор 1', year: 2020, details: 'gdfgdfgdfgdfg'},
-        {id: 2, title: 'Книга 2', author: 'Автор 2', year: 2019, details: 'hgfhfhhgfh'},
-        {id: 3, title: 'Книга 3', author: 'Автор 3', year: 2021, details: ''}
-      ]
+      movies: [
+        {id: 1, title: 'Фильм 1', director: 'Режиссер 1', year: 2020, details: 'Какие то детали'},
+        {id: 2, title: 'Фильм 2', director: 'Режиссер 2', year: 2019, details: ''},
+        {id: 3, title: 'Фильм 3', director: 'Режиссер 3', year: 2021, details: 'И тут детали'}
+      ],
+      newDetails: ''
     };
   },
+  methods: {
+    handleInfoUpdate(details) {
+      this.newDetails = details;
+    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

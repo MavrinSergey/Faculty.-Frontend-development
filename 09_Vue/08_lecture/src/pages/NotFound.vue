@@ -1,11 +1,11 @@
 <script>
 export default {
-name: "NotFound"
+  name: "NotFound"
 }
 </script>
 
 <template>
-  $END$
+  <div>404</div>
 </template>
 
 <style scoped>

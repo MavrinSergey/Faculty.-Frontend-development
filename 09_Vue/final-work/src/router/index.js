@@ -12,30 +12,26 @@ export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '/users/:id',
-            name: 'users',
-            component: Page5ProjectDetails,
-            props: true,
-        },
-        {
             path: '/home',
             name: 'home',
             component: Page1Home,
         },
         {
             path: '/blog',
-            name: 'blog',
             component: Page2Blog,
         },
         {
             path: '/project',
-            name: 'project',
             component: Page3Project,
         },
         {
             path: '/blog-details',
-            name: 'blogDetails',
             component: Page4BlogDetails,
+        },
+        {
+            path: '/project/:id',
+            component: Page5ProjectDetails,
+            props: true,
         },
         // {
         //     path: '*',

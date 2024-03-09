@@ -11,7 +11,10 @@
         readable
         content of page looking at its layouts points.</p>
       <ul class="projects">
-        <ProjectComponent v-for="project in lastFourProjects" :project="project" :key="project.id"/>
+        <ProjectComponent
+            v-for="project in lastFourProjects"
+            :project="project"
+            :key="project.id"/>
       </ul>
     </div>
     <div class="descriptions">
@@ -40,7 +43,10 @@
       <p class="articles__desc">It is a long established fact that a reader will be distracted by the of readable
         content of a page when looking at its layouts the points of using.</p>
       <ul class="articles__wrap">
-        <ArticlesComponent v-for="article in firstThreeArticles" :key="article.id" :article="article"/>
+        <ArticlesComponent
+            v-for="article in firstThreeArticles"
+            :article="article"
+            :key="article.id"/>
       </ul>
     </div>
   </section>
@@ -48,7 +54,7 @@
 <script>
 import ProjectComponent from '@/components/UI/ProjectComponent.vue';
 import ArticlesComponent from "@/components/UI/ArticlesComponent.vue";
-import {mapGetters} from "vuex";
+import {mapGetters, mapState} from "vuex";
 import BtnComponent from "@/components/UI/BtnComponent.vue";
 
 
@@ -65,7 +71,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['firstThreeArticles', 'lastFourProjects'])
+    ...mapState({
+      projects: state => state.projects.projects,
+    }),
+    ...mapGetters({
+      firstThreeArticles: 'articles/firstThreeArticles',
+      lastFourProjects: 'projects/lastFourProjects'
+    })
   },
 }
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <button class="btn" @click="chooseRoom" :class="{btn_black: isActiveBlack, btn_white: isActiveWhite}"><slot></slot></button>
+  <button class="btn" @click="handleClick" :class="{btn_black: isActiveBlack, btn_white: isActiveWhite}"><slot></slot></button>
 </template>
 
 <script>
 export default {
   name: "BtnComponent",
-  props: ['colorBtn'],
+  props: ['colorBtn', 'handler'],
   data() {
     return {
       isActiveBlack: true,
@@ -20,8 +20,8 @@ export default {
       this.isActiveBlack = bool;
       this.isActiveWhite = !bool;
     },
-    chooseRoom() {
-      this.$emit('select-room')
+    handleClick() {
+      return this.handler();
     }
   }
 }

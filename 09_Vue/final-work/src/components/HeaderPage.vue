@@ -13,16 +13,6 @@ import LogoComponent from "@/components/UI/LogoComponent.vue";
 export default {
   name: "HeaderPage",
   components: {LogoComponent, NavPages},
-  props: [],
-  data() {
-    return {}
-  },
-  methods: {
-    changeContent(componentType) {
-      this.$emit('changeContent', componentType)
-    }
-  }
-
 }
 </script>
 

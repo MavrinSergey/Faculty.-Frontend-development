@@ -1,14 +1,23 @@
 <template>
   <div id="app">
+    <SeminarComp/>
+    <CartComp/>
+    <JsonPlaceholder/>
   </div>
 </template>
 
 <script>
 
+import SeminarComp from "@/components/SeminarComp.vue";
+import CartComp from "@/components/CartComp.vue";
+import JsonPlaceholder from "@/components/JsonPlaceholder.vue";
 
 export default {
   name: 'App',
   components: {
+    JsonPlaceholder,
+    SeminarComp,
+    CartComp,
   }
 }
 </script>
