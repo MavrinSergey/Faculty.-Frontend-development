@@ -87,7 +87,6 @@ export const articlesModule = {
     mutations: {
         setCurrentPage(state, pagination_pageNumber) {
             state.currentPage = pagination_pageNumber;
-            console.log(pagination_pageNumber)
         },
     },
     getters: {
