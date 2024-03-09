@@ -13,20 +13,20 @@
     <div class="projects">
       <ul>
         <ProjectComponent
-            v-for="project in projectsItem"
+            v-for="project in projects"
             :project="project"
             :key="project.id"/>
       </ul>
       <div class="btn-menu">
         <BtnComponent
             :colorBtn="colorBtn"
-            :disabled="pagination_pageNumber === 0"
-            @click="prevPage">Prev
+            :handler="prevPage">
+          Prev
         </BtnComponent>
         <BtnComponent
             :colorBtn="colorBtn"
-            :disabled="pagination_pageNumber >= pageCount - 1"
-            @click="nextPage">Next
+            :handler="nextPage">
+          Next
         </BtnComponent>
       </div>
     </div>
@@ -37,7 +37,7 @@
 import HeaderContent from "@/components/HeaderContent.vue";
 import BtnComponent from "@/components/UI/BtnComponent.vue";
 import ProjectComponent from "@/components/UI/ProjectComponent.vue";
-import { mapGetters } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "Page3Project",
@@ -57,10 +57,15 @@ export default {
       colorBtn: 'white',
     }
   },
-  methods: {},
+  methods: {
+    ...mapActions({
+      prevPage: 'projects/prevPage',
+      nextPage: 'projects/nextPage',
+    }),
+  },
   computed: {
     ...mapGetters({
-      projects: 'projects/getProjects',
+      projects: 'projects/getPaginatedData',
     }),
   },
 }
