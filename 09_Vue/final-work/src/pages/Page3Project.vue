@@ -7,6 +7,7 @@
       <BtnComponent
           v-for="room in rooms"
           :colorBtn="colorBtn"
+          :handler="filterProjects"
           :key="room.id">{{ room }}
       </BtnComponent>
     </div>
@@ -61,6 +62,7 @@ export default {
     ...mapActions({
       prevPage: 'projects/prevPage',
       nextPage: 'projects/nextPage',
+      filterProjects: 'projects/getFilterProjects',
     }),
   },
   computed: {
@@ -68,6 +70,9 @@ export default {
       projects: 'projects/getPaginatedData',
     }),
   },
+  mounted() {
+    this.filterProjects(false);
+  }
 }
 </script>
 
