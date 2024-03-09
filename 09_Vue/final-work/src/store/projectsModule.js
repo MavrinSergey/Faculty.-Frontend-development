@@ -77,9 +77,13 @@ export const projectsModule = {
             ],
             currentPage: 0,
             projectsPerPage: 8,
+            filterProjects: [],
         }
     },
     mutations: {
+        setFilterProjects(state, filterProjects) {
+            state.filterProjects = filterProjects;
+        },
         setCurrentPage(state, pagination_pageNumber) {
             state.currentPage = pagination_pageNumber;
         },
@@ -91,16 +95,23 @@ export const projectsModule = {
         getPaginatedData: state => {
             const start = state.currentPage * state.projectsPerPage;
             const end = start + state.projectsPerPage;
-            return state.projects.slice(start, end);
+            return state.filterProjects.slice(start, end);
         },
         getPagination_items_total: (state) => {
-            return state.projects.length;
+            return state.filterProjects.length;
         },
         getPageCount(state, getters) {
             return Math.ceil(getters.getPagination_items_total / state.projectsPerPage);
         }
     },
     actions: {
+        getFilterProjects({state, commit}, searchItem) {
+            if (!searchItem) {
+                commit('setFilterProjects', state.projects)
+            } else {
+                commit('setFilterProjects', state.projects.filter(project => project.title.indexOf(searchItem) !== -1))
+            }
+        },
         nextPage({state, commit, getters}) {
             return state.currentPage === getters.getPageCount - 1
                 ? null
