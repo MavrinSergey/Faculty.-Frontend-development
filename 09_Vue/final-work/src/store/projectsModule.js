@@ -102,14 +102,18 @@ export const projectsModule = {
         },
         getPageCount(state, getters) {
             return Math.ceil(getters.getPagination_items_total / state.projectsPerPage);
+        },
+        isPagination(state, getters) {
+            return getters.getPagination_items_total > state.projectsPerPage;
         }
     },
     actions: {
-        getFilterProjects({state, commit}, searchItem) {
-            if (!searchItem) {
+        getFilterProjects({state, commit}, event) {
+            if (!event) {
                 commit('setFilterProjects', state.projects)
             } else {
-                commit('setFilterProjects', state.projects.filter(project => project.title.indexOf(searchItem) !== -1))
+                const searchItem = event.target.textContent.trim();
+                commit('setFilterProjects', state.projects.filter(project => project.title.indexOf(searchItem) !== -1));
             }
         },
         nextPage({state, commit, getters}) {

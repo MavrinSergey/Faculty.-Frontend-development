@@ -26,8 +26,8 @@ export default {
       this.isActiveBlack = bool;
       this.isActiveWhite = !bool;
     },
-    handleClick({target}) {
-      return this.handler(target.textContent);
+    handleClick(event) {
+      return this.handler(event);
     }
   }
 }

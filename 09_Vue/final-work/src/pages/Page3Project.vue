@@ -20,11 +20,13 @@
       </ul>
       <div class="btn-menu">
         <BtnComponent
+            v-if="showBtn"
             :colorBtn="colorBtn"
             :handler="prevPage">
           Prev
         </BtnComponent>
         <BtnComponent
+            v-if="showBtn"
             :colorBtn="colorBtn"
             :handler="nextPage">
           Next
@@ -68,6 +70,7 @@ export default {
   computed: {
     ...mapGetters({
       projects: 'projects/getPaginatedData',
+      showBtn: 'projects/isPagination',
     }),
   },
   mounted() {
