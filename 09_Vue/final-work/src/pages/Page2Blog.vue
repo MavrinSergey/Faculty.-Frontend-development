@@ -1,17 +1,26 @@
 <template>
   <section class="page2">
-    <HeaderContent :title="title" :links="links"/>
+    <HeaderContent
+        :title="title"
+        :links="links"/>
     <LatestPost/>
     <div class="articles">
       <h2 class="articles__title">{{ title }}</h2>
       <div class="articles__wrap">
-        <ArticlesComponent v-for="article in paginatedData" :key="article.id" :article="article"/>
+        <ArticlesComponent
+            v-for="article in paginatedData"
+            :key="article.id"
+            :article="article"/>
       </div>
       <div class="btn-menu">
-        <BtnComponent :colorBtn="colorBtn" :handler="prevPage">
+        <BtnComponent
+            :colorBtn="colorBtn"
+            :handler="prevPage">
           Prev
         </BtnComponent>
-        <BtnComponent :colorBtn="colorBtn" :handler="nextPage">
+        <BtnComponent
+            :colorBtn="colorBtn"
+            :handler="nextPage">
           Next
         </BtnComponent>
       </div>
@@ -21,7 +30,7 @@
 <script>
 import HeaderContent from "@/components/HeaderContent.vue";
 import LatestPost from "@/components/UI/LatestPost.vue";
-import { mapActions, mapGetters } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import ArticlesComponent from "@/components/UI/ArticlesComponent.vue";
 import BtnComponent from "@/components/UI/BtnComponent.vue";
 
@@ -49,21 +58,10 @@ export default {
       prevPage: 'articles/prevPage',
       nextPage: 'articles/nextPage',
     }),
-
-    mounted() {
-      this.paginatedData();
-    },
-    prevPageThis() {
-      console.log('next')
-    }
   },
   computed: {
     ...mapGetters({
-      articlesItem: 'articles/getArticles',
       paginatedData: 'articles/getPaginatedData',
-      pagination_items_total: 'articles/getPagination_items_total',
-      pagination_numberItems: 'articles/getPagination_numberItems',
-      pagination_pageNumber: 'articles/getPagination_pageNumber',
     }),
   }
 }
@@ -78,7 +76,7 @@ export default {
 
   &__title {
     margin-bottom: 27px;
-    font-family: dm;
+    font-family: dm sans-serif;
     font-size: 50px;
     font-weight: 400;
     line-height: 125%;

@@ -78,7 +78,7 @@ export const projectsModule = {
         }
     },
     getters: {
-        projectsItem: state => {
+        getProjects: state => {
             return state.projects;
         },
         lastFourProjects: state => {

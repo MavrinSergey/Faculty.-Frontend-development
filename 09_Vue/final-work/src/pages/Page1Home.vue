@@ -54,7 +54,7 @@
 <script>
 import ProjectComponent from '@/components/UI/ProjectComponent.vue';
 import ArticlesComponent from "@/components/UI/ArticlesComponent.vue";
-import {mapGetters, mapState} from "vuex";
+import { mapGetters } from "vuex";
 import BtnComponent from "@/components/UI/BtnComponent.vue";
 
 
@@ -71,9 +71,6 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      projects: state => state.projects.projects,
-    }),
     ...mapGetters({
       firstThreeArticles: 'articles/firstThreeArticles',
       lastFourProjects: 'projects/lastFourProjects'
@@ -109,7 +106,7 @@ export default {
     margin-bottom: 21px;
     max-width: 434px;
     color: $colorTextGrey2;
-    font-family: Jost;
+    font-family: Jost sans-serif;
     font-size: 22px;
     font-weight: 400;
     line-height: 150%;
@@ -124,7 +121,7 @@ export default {
   .projects__title {
     margin-bottom: 8px;
     color: $colorTextGrey2;
-    font-family: dm;
+    font-family: dm sans-serif;
     font-size: 50px;
     font-weight: 400;
     line-height: 125%;
@@ -177,7 +174,7 @@ export default {
 
     & p:first-child {
       color: $colorPrimary;
-      font-family: dm;
+      font-family: dm sans-serif;
       font-size: 85px;
       font-weight: 400;
       line-height: 125%;
@@ -185,7 +182,7 @@ export default {
 
     & p:last-child {
       color: $colorTextGrey2;
-      font-family: jost;
+      font-family: jost sans-serif;
       font-size: 22px;
       font-weight: 400;
       line-height: 150%;
@@ -200,7 +197,7 @@ export default {
       margin-bottom: 12px;
       text-align: center;
       color: $colorPrimary2;
-      font-family: dm;
+      font-family: dm sans-serif;
       font-size: 50px;
       font-weight: 400;
       line-height: 125%;
@@ -211,7 +208,7 @@ export default {
       max-width: 811px;
       text-align: center;
       color: $colorTextGrey2;
-      font-family: Jost;
+      font-family: Jost sans-serif;
       font-size: 22px;
       font-weight: 400;
       line-height: 150%;

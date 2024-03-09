@@ -1,18 +1,33 @@
 <template>
   <section class="page3">
-    <HeaderContent :title="title" :links="links"/>
+    <HeaderContent
+        :title="title"
+        :links="links"/>
     <div class="btn-menu">
-      <BtnComponent :colorBtn="colorBtn" v-for="room in rooms" :key="room.id">{{ room }}</BtnComponent>
+      <BtnComponent
+          v-for="room in rooms"
+          :colorBtn="colorBtn"
+          :key="room.id">{{ room }}
+      </BtnComponent>
     </div>
     <div class="projects">
       <ul>
-        <ProjectComponent nt v-for="project in projectsItem" :project="project" :key="project.id"/>
+        <ProjectComponent
+            v-for="project in projectsItem"
+            :project="project"
+            :key="project.id"/>
       </ul>
       <div class="btn-menu">
-        <BtnComponent :colorBtn="colorBtn" :disabled="pagination_pageNumber === 0"
-                      @click="prevPage">Prev</BtnComponent>
-        <BtnComponent :colorBtn="colorBtn" :disabled="pagination_pageNumber >= pageCount - 1"
-                      @click="nextPage">Next</BtnComponent>
+        <BtnComponent
+            :colorBtn="colorBtn"
+            :disabled="pagination_pageNumber === 0"
+            @click="prevPage">Prev
+        </BtnComponent>
+        <BtnComponent
+            :colorBtn="colorBtn"
+            :disabled="pagination_pageNumber >= pageCount - 1"
+            @click="nextPage">Next
+        </BtnComponent>
       </div>
     </div>
   </section>
@@ -42,17 +57,18 @@ export default {
       colorBtn: 'white',
     }
   },
-  methods: {
-
-  },
+  methods: {},
   computed: {
-    ...mapGetters(['projectsItem']),
+    ...mapGetters({
+      projects: 'projects/getProjects',
+    }),
   },
 }
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/scss-modules/styles.scss";
+
 .page3 {
   .projects {
     margin: 0 auto 200px;
