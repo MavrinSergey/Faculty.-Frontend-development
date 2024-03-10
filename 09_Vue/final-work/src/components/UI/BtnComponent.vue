@@ -2,12 +2,13 @@
   <button
       class="btn"
       @click="handleClick"
-      :class="{btn_black: isActiveBlack, btn_white: isActiveWhite}">
+      :class="{btn_black: isActiveBlack, btn_white: isActiveWhite, btn_orange: isActiveFilter}">
     <slot></slot>
   </button>
 </template>
 
 <script>
+
 
 export default {
   name: "BtnComponent",
@@ -16,6 +17,7 @@ export default {
     return {
       isActiveBlack: true,
       isActiveWhite: false,
+      isActiveFilter: false,
     }
   },
   mounted() {
@@ -27,6 +29,7 @@ export default {
       this.isActiveWhite = !bool;
     },
     handleClick(event) {
+      this.isActiveFilter = !this.isActiveFilter;
       return this.handler(event);
     }
   }

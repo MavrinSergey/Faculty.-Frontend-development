@@ -1,4 +1,5 @@
 @import "./variables";
+
 .btn-menu {
   margin: 0 auto 61px;
   display: table;
@@ -11,7 +12,7 @@
   padding: 26px 54px;
   border-radius: 18px;
   border: none;
-  font-family: Jost;
+  font-family: Jost sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 150%;
@@ -34,15 +35,19 @@
       color: white;
     }
   }
-}
-.btn__pagination {
-  width: 52px;
-  height: 52px;
-  border: 1px solid $colorPrimary;
-  border-radius: 50%;
-  font-family: Jost;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 150%;
-  color: $colorPrimary2;
+
+  &__pagination {
+    width: 52px;
+    height: 52px;
+    border: 1px solid $colorPrimary;
+    border-radius: 50%;
+    font-family: Jost sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $colorPrimary2;
+  }
+  &_orange {
+    background-color: $colorPrimary;
+  }
 }
