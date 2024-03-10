@@ -78,9 +78,22 @@ export const projectsModule = {
             currentPage: 0,
             projectsPerPage: 8,
             filterProjects: [],
+            tagsForFiltering: [
+                {name: 'Bathroom', isActive: false},
+                {name: 'Bed Room', isActive: false},
+                {name: 'Kitchen', isActive: false},
+                {name: 'Living Area', isActive: false},
+            ],
         }
     },
     mutations: {
+        setTagsForFiltering(state, tagName) {
+            state.tagsForFiltering.forEach(item => {
+                if (item.name === tagName) {
+                    item.isActive = !item.isActive;
+                }
+            })
+        },
         setFilterProjects(state, filterProjects) {
             state.filterProjects = filterProjects;
         },
@@ -89,6 +102,12 @@ export const projectsModule = {
         },
     },
     getters: {
+        getFilterProjects: state => {
+            return state.filterProjects;
+        },
+        getActiveTags: state => {
+            return state.tagsForFiltering.filter(item => item.isActive === true)
+        },
         lastFourProjects: state => {
             return state.projects.slice(-4, state.projects.length)
         },
@@ -105,26 +124,31 @@ export const projectsModule = {
         },
         isPagination(state, getters) {
             return getters.getPagination_items_total > state.projectsPerPage;
-        }
+        },
     },
     actions: {
-        getFilterProjects({state, commit}, event) {
-            if (!event) {
-                commit('setFilterProjects', state.projects)
+        clickTagFilter({getters, commit, state}, event) {
+            if (event) {
+                const tagName = event.target.textContent.trim();
+                commit('setTagsForFiltering', tagName);
+                const filteredProjects = state.projects.filter(project => {
+                    return getters.getActiveTags.some(tag => project.title.includes(tag.name));
+                });
+                commit('setFilterProjects', filteredProjects);
             } else {
-                const searchItem = event.target.textContent.trim();
-                commit('setFilterProjects', state.projects.filter(project => project.title.indexOf(searchItem) !== -1));
+                const filteredProjects = state.projects;
+                commit('setFilterProjects', filteredProjects);
             }
         },
         nextPage({state, commit, getters}) {
-            return state.currentPage === getters.getPageCount - 1
-                ? null
-                : commit('setCurrentPage', state.currentPage + 1);
+            if (state.currentPage < getters.getPageCount - 1) {
+                commit('setCurrentPage', state.currentPage + 1);
+            }
         },
         prevPage({state, commit}) {
-            return state.currentPage === 0
-                ? null
-                : commit('setCurrentPage', state.currentPage - 1)
+            if (state.currentPage > 0) {
+                commit('setCurrentPage', state.currentPage - 1)
+            }
         }
     },
     namespaced: true

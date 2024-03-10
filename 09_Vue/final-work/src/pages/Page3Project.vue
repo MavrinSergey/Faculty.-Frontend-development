@@ -7,7 +7,7 @@
       <BtnComponent
           v-for="room in rooms"
           :colorBtn="colorBtn"
-          :handler="filterProjects"
+          :handler="clickTagFilter"
           :key="room.id">{{ room }}
       </BtnComponent>
     </div>
@@ -64,7 +64,7 @@ export default {
     ...mapActions({
       prevPage: 'projects/prevPage',
       nextPage: 'projects/nextPage',
-      filterProjects: 'projects/getFilterProjects',
+      clickTagFilter: 'projects/clickTagFilter',
     }),
   },
   computed: {
@@ -74,7 +74,7 @@ export default {
     }),
   },
   mounted() {
-    this.filterProjects(false);
+    this.clickTagFilter(false);
   }
 }
 </script>
